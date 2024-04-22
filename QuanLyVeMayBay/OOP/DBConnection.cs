@@ -68,6 +68,7 @@ namespace QuanLyVeMayBay
             }
             return table;
         }
+
         public List<MayBay> GetAllMayBay()
         {
             List<MayBay> list = new List<MayBay>();
@@ -99,6 +100,31 @@ namespace QuanLyVeMayBay
             return list;
         }
 
+        public DataTable GetAllMayBaydt()
+        {
+            DataTable table = new DataTable(); 
+            try
+            {
+                KetNoi();
+
+                SqlCommand cmd = new SqlCommand($"SELECT * FROM GetAllMayBay()", connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(table);
+            }
+            catch (SqlException ex)
+            {
+                foreach (SqlError error in ex.Errors)
+                {
+                    MessageBox.Show($"SQL Error: {error.Number} - {error.Message}", "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            finally
+            {
+                DongKetNoi();
+            }
+            return table;
+        }
+
         public void ThemChuyenBay(ChuyenBay cb)
         {
             try
@@ -128,6 +154,36 @@ namespace QuanLyVeMayBay
             finally
             {
                 DongKetNoi();
+            }
+        }
+
+        public void ThemMayBay(MayBay mb)
+        {
+            try
+            {
+                KetNoi();
+                SqlCommand command = new SqlCommand($"AddNewMayBay", connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@TenMB", mb.TenMB);
+                command.Parameters.AddWithValue("@soluongEco", mb.LoaiVe[0].SoLuong);
+                command.Parameters.AddWithValue("@soluongDeluxe", mb.LoaiVe[1].SoLuong);
+                command.Parameters.AddWithValue("@soluongskyBoss", mb.LoaiVe[2].SoLuong);
+                command.Parameters.AddWithValue("@soluongBusiness", mb.LoaiVe[3].SoLuong);
+
+                command.ExecuteNonQuery();
+                MessageBox.Show("Them thanh cong!");
+            }
+            catch (SqlException ex)
+            {
+                foreach (SqlError error in ex.Errors)
+                {
+                    MessageBox.Show($"{error.Message}", "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            finally
+            { 
+                DongKetNoi(); 
             }
         }
 

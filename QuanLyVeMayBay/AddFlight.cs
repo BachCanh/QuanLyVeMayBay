@@ -36,6 +36,7 @@ namespace QuanLyVeMayBay
                 btnCRUD.Text = "Sua";
                 btnCRUD.Click -= guna2Button2_Click;
                 btnCRUD.Click += btnCrud_Click;
+                lblTitle.Text = "Sua Chuyen Bay";
             }
         }
         private void FillInfor()
@@ -60,8 +61,9 @@ namespace QuanLyVeMayBay
             travelTimes = new Dictionary<string, Dictionary<string, int>>
             {
                 { "Ha Noi (HAN)", new Dictionary<string, int> { { "Ho Chi Minh (SGN)", 130 }, { "Da Nang (DAD)", 80 }, { "Da Lat (DLI)", 110 } } },
-                { "Ho Chi Minh (SGN)", new Dictionary<string, int> { { "Da Nang (DAD)", 80 }, { "Da Lat (DLI)", 55 } } },
-                { "Da Nang (DAD)", new Dictionary<string, int> { { "Da Lat (DLI)", 70 } } }
+                { "Ho Chi Minh (SGN)", new Dictionary<string, int> { { "Ha Noi (HAN)",  130},  { "Da Nang (DAD)", 80 }, { "Da Lat (DLI)", 55 } } },
+                { "Da Nang (DAD)", new Dictionary<string, int> { { "Da Lat (DLI)", 70 }, { "Ho Chi Minh (SGN)", 80 }, { "Ha Noi (HAN)", 80 } } },
+                { "Da Lat (DLI)", new Dictionary<string, int> { { "Da Lat (DLI)", 70 }, { "Ho Chi Minh (SGN)", 55 }, { "Ha Noi (HAN)", 110 } } }
             };
             cbbDen.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
             cbbXuatPhat.SelectedIndexChanged += ComboBox_SelectedIndexChanged;

@@ -12,13 +12,17 @@ namespace QuanLyVeMayBay
     {
         private string maloai;
         private string tenloai;
-        private double gia;
+        private int gia;
         private int soluong;
         private string maMB;
 
         public LoaiVe() { }
 
-        public LoaiVe(string maloai, string tenloai, double gia, int soluong, string maMB)
+        public LoaiVe(int soluong)
+        {
+            this.soluong = soluong;
+        }
+        public LoaiVe(string maloai, string tenloai, int gia, int soluong, string maMB)
         {
             this.maloai = maloai;
             this.tenloai = tenloai;
@@ -37,7 +41,7 @@ namespace QuanLyVeMayBay
             get { return tenloai; }
         }
 
-        public double Gia
+        public int Gia
         {
             get { return gia; }
         }
