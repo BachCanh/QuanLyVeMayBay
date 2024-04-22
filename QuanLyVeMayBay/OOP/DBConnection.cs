@@ -131,6 +131,66 @@ namespace QuanLyVeMayBay
             }
         }
 
+        public void SuaChuyenBay(ChuyenBay cb)
+        {
+            try
+            {
+                KetNoi();
+
+                SqlCommand command = new SqlCommand($"UpdateChuyenBay", connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@MaCB", cb.MaCB);
+                command.Parameters.AddWithValue("@DiemXuatPhat", cb.XuatPhat);
+                command.Parameters.AddWithValue("@DiemDen", cb.Den);
+                command.Parameters.AddWithValue("@MaMB", cb.MB.MaMB);
+                command.Parameters.AddWithValue("@NgayBay", cb.NgayBay.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue("@PhutBay", cb.PhutBay);
+                command.Parameters.AddWithValue("@GioHaCanh", cb.CatCanh);
+                command.Parameters.AddWithValue("@GioCatCanh", cb.HaCanh);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Sua thanh cong!");
+            }
+            catch (SqlException ex)
+            {
+                foreach (SqlError error in ex.Errors)
+                {
+                    MessageBox.Show($"SQL Error: {error.Number} - {error.Message}", "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            finally
+            {
+                DongKetNoi();
+            }
+        }
+
+
+        public void XoaChuyenBay(string maCB)
+        {
+            try
+            {
+                KetNoi();
+
+                SqlCommand command = new SqlCommand($"DeleteChuyenBay", connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@MaCB", maCB);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Xoa thanh cong!");
+            }
+            catch (SqlException ex)
+            {
+                foreach (SqlError error in ex.Errors)
+                {
+                    MessageBox.Show($"SQL Error: {error.Number} - {error.Message}", "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            finally
+            {
+                DongKetNoi();
+            }
+        }
+
         public float TongTienVeDaBan()
         {
             float TongTienVe = 0;

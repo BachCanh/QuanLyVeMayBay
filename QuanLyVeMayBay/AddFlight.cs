@@ -17,8 +17,9 @@ namespace QuanLyVeMayBay
         private Dictionary<string, Dictionary<string, int>> travelTimes;
         private DBConnection db;
         private int time;
+        ChuyenBay cb = new ChuyenBay();
 
-        public AddFlight(DBConnection db)
+        public AddFlight(DBConnection db, ChuyenBay cbay)
         {
             InitializeComponent();
             this.db = db;
@@ -27,8 +28,28 @@ namespace QuanLyVeMayBay
                 string mb = item.MaMB + " - " + item.TenMB;
                 cbbMayBay.Items.Add(mb);
             }
-        }
 
+            if (cbay.MaCB != null && !cbay.MaCB.Equals("") && cbay.NgayBay != null && cbay.NgayBay != DateTime.MinValue)
+            {
+                this.cb = cbay;
+                FillInfor();
+                btnCRUD.Text = "Sua";
+                btnCRUD.Click -= guna2Button2_Click;
+                btnCRUD.Click += btnCrud_Click;
+            }
+        }
+        private void FillInfor()
+        {
+            cbbXuatPhat.Text = cb.XuatPhat;
+            cbbDen.Text = cb.Den;
+            var item = cbbMayBay.Items.Cast<object>().FirstOrDefault(item => item.ToString().Contains(cb.MB.MaMB));
+            cbbMayBay.SelectedItem = item;
+            dtpNgayBay.Value = cb.NgayBay;
+            dtpGioBay.Value = new DateTime(cb.NgayBay.Year, cb.NgayBay.Month, cb.NgayBay.Day, cb.CatCanh.Hours, cb.CatCanh.Minutes, cb.CatCanh.Seconds);
+            lblTgBay.Text = cb.PhutBay.ToString();
+            lblGioKH.Text = cb.CatCanh.ToString();
+            lblGioDen.Text = cb.HaCanh.ToString();
+        }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -36,12 +57,6 @@ namespace QuanLyVeMayBay
 
         private void AddFlight_Load(object sender, EventArgs e)
         {
-            /*
-             Ho Chi Minh (SGN)
-            Ha Noi (HAN)
-            Da Nang (DAD)
-            Da Lat (DLI)
-             */
             travelTimes = new Dictionary<string, Dictionary<string, int>>
             {
                 { "Ha Noi (HAN)", new Dictionary<string, int> { { "Ho Chi Minh (SGN)", 130 }, { "Da Nang (DAD)", 80 }, { "Da Lat (DLI)", 110 } } },
@@ -80,16 +95,6 @@ namespace QuanLyVeMayBay
             }
             previousSelectedItemCbbDen = currentSelectedItem;
         }
-        private void setPhutBay()
-        {
-            // Hanoi HCM 130p
-            // Hanoi Danang 80p
-            // Hanoi DaLat 110p
-            // HCM Danag 80p
-            // HCM Dalat 55p
-            // Danang Dalat 70p
-        }
-
 
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -116,7 +121,7 @@ namespace QuanLyVeMayBay
             lblGioDen.Text = dtpGioBay.Value.AddMinutes(time).ToString("HH:mm");
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void SetInforChuyenBay()
         {
             string xuatphat = cbbXuatPhat.Text;
             string den = cbbDen.Text;
@@ -128,8 +133,21 @@ namespace QuanLyVeMayBay
             DateTime gioBay = dtpGioBay.Value;
             TimeSpan catcanh = gioBay.TimeOfDay;
             TimeSpan hacanh = gioBay.TimeOfDay.Add(TimeSpan.FromMinutes(phutbay));
-            ChuyenBay cb = new ChuyenBay(xuatphat, den, ngaybay, hacanh, catcanh, phutbay, mb);
+            cb = new ChuyenBay(cb.MaCB, xuatphat, den, ngaybay, hacanh, catcanh, phutbay, mb);
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            SetInforChuyenBay();
             db.ThemChuyenBay(cb);
+            this.Close();
+        }
+
+        private void btnCrud_Click(object sender, EventArgs e)
+        {
+            SetInforChuyenBay();
+            db.SuaChuyenBay(cb);
+            this.Close();
         }
     }
 }
