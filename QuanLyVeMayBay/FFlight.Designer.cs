@@ -157,7 +157,6 @@
             btnMayBay.Size = new Size(159, 49);
             btnMayBay.TabIndex = 7;
             btnMayBay.Text = "May Bay";
-            btnMayBay.Click += btnMayBay_Click;
             // 
             // guna2Panel7
             // 
@@ -194,7 +193,6 @@
             btnChuyenBay.Size = new Size(165, 49);
             btnChuyenBay.TabIndex = 6;
             btnChuyenBay.Text = "Chuyen Bay";
-            btnChuyenBay.Click += btnChuyenBay_Click;
             // 
             // guna2Panel2
             // 
@@ -239,7 +237,7 @@
             btnReload.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnReload.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnReload.Dock = DockStyle.Left;
-            btnReload.FillColor = Color.MistyRose;
+            btnReload.FillColor = Color.FromArgb(141, 236, 180);
             btnReload.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnReload.ForeColor = Color.Black;
             btnReload.ImageAlign = HorizontalAlignment.Left;
@@ -275,7 +273,7 @@
             btnXoa.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnXoa.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnXoa.Dock = DockStyle.Left;
-            btnXoa.FillColor = Color.MistyRose;
+            btnXoa.FillColor = Color.FromArgb(141, 236, 180);
             btnXoa.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnXoa.ForeColor = Color.Black;
             btnXoa.ImageAlign = HorizontalAlignment.Left;
@@ -311,7 +309,7 @@
             btnSua.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnSua.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnSua.Dock = DockStyle.Left;
-            btnSua.FillColor = Color.MistyRose;
+            btnSua.FillColor = Color.FromArgb(141, 236, 180);
             btnSua.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnSua.ForeColor = Color.Black;
             btnSua.ImageAlign = HorizontalAlignment.Left;
@@ -347,7 +345,7 @@
             guna2Button6.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button6.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button6.Dock = DockStyle.Left;
-            guna2Button6.FillColor = Color.MistyRose;
+            guna2Button6.FillColor = Color.FromArgb(141, 236, 180);
             guna2Button6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             guna2Button6.ForeColor = Color.Black;
             guna2Button6.ImageAlign = HorizontalAlignment.Left;
@@ -390,8 +388,8 @@
             dtBody.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(46, 204, 113);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.Desktop;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
@@ -400,7 +398,7 @@
             dtBody.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(213, 244, 226);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(115, 221, 160);
             dataGridViewCellStyle3.SelectionForeColor = Color.Black;
@@ -426,14 +424,14 @@
             dtBody.ThemeStyle.GridColor = Color.FromArgb(187, 238, 208);
             dtBody.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(46, 204, 113);
             dtBody.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            dtBody.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dtBody.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dtBody.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI Semibold", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dtBody.ThemeStyle.HeaderStyle.ForeColor = SystemColors.Desktop;
             dtBody.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dtBody.ThemeStyle.HeaderStyle.Height = 40;
             dtBody.ThemeStyle.ReadOnly = true;
             dtBody.ThemeStyle.RowsStyle.BackColor = Color.FromArgb(213, 244, 226);
             dtBody.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dtBody.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtBody.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             dtBody.ThemeStyle.RowsStyle.ForeColor = Color.Black;
             dtBody.ThemeStyle.RowsStyle.Height = 25;
             dtBody.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(115, 221, 160);

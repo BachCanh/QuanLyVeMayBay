@@ -18,7 +18,9 @@ namespace QuanLyVeMayBay
 
         private void parrotButton1_Click(object sender, EventArgs e)
         {
-            Environment.Exit(1);
+            this.Hide();
+            FMainPage fMain = new FMainPage();
+            fMain.Show();
         }
 
         private void FLogin_Load(object sender, EventArgs e)

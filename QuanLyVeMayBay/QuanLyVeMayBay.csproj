@@ -9,9 +9,43 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="assets\VJ_Hotline.png" />
+    <None Remove="fonts\arial\arial.ttf" />
+    <None Remove="fonts\arial\arialbd.ttf" />
+    <None Remove="fonts\arial\arialbi.ttf" />
+    <None Remove="fonts\arial\ariali.ttf" />
+    <None Remove="fonts\arial\ARIALN.TTF" />
+    <None Remove="fonts\arial\ARIALNB.TTF" />
+    <None Remove="fonts\arial\ARIALNBI.TTF" />
+    <None Remove="fonts\arial\ARIALNI.TTF" />
+    <None Remove="fonts\arial\ariblk.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="assets\VJ_Hotline.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="fonts\arial\arial.ttf" />
+    <EmbeddedResource Include="fonts\arial\arialbd.ttf" />
+    <EmbeddedResource Include="fonts\arial\arialbi.ttf" />
+    <EmbeddedResource Include="fonts\arial\ariali.ttf" />
+    <EmbeddedResource Include="fonts\arial\ARIALN.TTF" />
+    <EmbeddedResource Include="fonts\arial\ARIALNB.TTF" />
+    <EmbeddedResource Include="fonts\arial\ARIALNBI.TTF" />
+    <EmbeddedResource Include="fonts\arial\ARIALNI.TTF" />
+    <EmbeddedResource Include="fonts\arial\ariblk.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
+    <PackageReference Include="PDFsharp" Version="6.0.0" />
     <PackageReference Include="ReaLTaiizor" Version="3.8.0.5" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.4" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>

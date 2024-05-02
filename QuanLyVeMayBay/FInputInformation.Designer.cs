@@ -78,13 +78,13 @@
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             pnHeader = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblDen = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblXuatPhat = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnHeaderDetails = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            lblNguoiLon = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblNgayXuatPhat = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             lblChuyenBay = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -93,9 +93,9 @@
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             pnMiddle = new Guna.UI2.WinForms.Guna2Panel();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            materialTextBoxEdit3 = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            materialTextBoxEdit2 = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            materialTextBoxEdit1 = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtEmail = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtDienThoai = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtNgaySinh = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtFullname = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             guna2Panel20 = new Guna.UI2.WinForms.Guna2Panel();
             rbtnKhac = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -250,9 +250,9 @@
             // 
             // guna2Panel4
             // 
-            guna2Panel4.Controls.Add(guna2HtmlLabel5);
+            guna2Panel4.Controls.Add(lblDen);
             guna2Panel4.Controls.Add(guna2HtmlLabel4);
-            guna2Panel4.Controls.Add(guna2HtmlLabel2);
+            guna2Panel4.Controls.Add(lblXuatPhat);
             guna2Panel4.Controls.Add(guna2HtmlLabel1);
             guna2Panel4.CustomizableEdges = customizableEdges7;
             guna2Panel4.Dock = DockStyle.Bottom;
@@ -262,19 +262,19 @@
             guna2Panel4.Size = new Size(1048, 47);
             guna2Panel4.TabIndex = 15;
             // 
-            // guna2HtmlLabel5
+            // lblDen
             // 
-            guna2HtmlLabel5.AutoSize = false;
-            guna2HtmlLabel5.BackColor = Color.Transparent;
-            guna2HtmlLabel5.Dock = DockStyle.Left;
-            guna2HtmlLabel5.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel5.ForeColor = Color.FromArgb(237, 45, 39);
-            guna2HtmlLabel5.Location = new Point(484, 0);
-            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new Size(132, 47);
-            guna2HtmlLabel5.TabIndex = 4;
-            guna2HtmlLabel5.Text = "Ha Noi (HAN)";
-            guna2HtmlLabel5.TextAlignment = ContentAlignment.MiddleLeft;
+            lblDen.AutoSize = false;
+            lblDen.BackColor = Color.Transparent;
+            lblDen.Dock = DockStyle.Left;
+            lblDen.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDen.ForeColor = Color.FromArgb(237, 45, 39);
+            lblDen.Location = new Point(484, 0);
+            lblDen.Name = "lblDen";
+            lblDen.Size = new Size(132, 47);
+            lblDen.TabIndex = 4;
+            lblDen.Text = "Ha Noi (HAN)";
+            lblDen.TextAlignment = ContentAlignment.MiddleLeft;
             // 
             // guna2HtmlLabel4
             // 
@@ -289,19 +289,19 @@
             guna2HtmlLabel4.Text = "Diem Den";
             guna2HtmlLabel4.TextAlignment = ContentAlignment.MiddleLeft;
             // 
-            // guna2HtmlLabel2
+            // lblXuatPhat
             // 
-            guna2HtmlLabel2.AutoSize = false;
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Dock = DockStyle.Left;
-            guna2HtmlLabel2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel2.ForeColor = Color.FromArgb(237, 45, 39);
-            guna2HtmlLabel2.Location = new Point(157, 0);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(221, 47);
-            guna2HtmlLabel2.TabIndex = 2;
-            guna2HtmlLabel2.Text = "Ho Chi Minh (SGN)";
-            guna2HtmlLabel2.TextAlignment = ContentAlignment.MiddleLeft;
+            lblXuatPhat.AutoSize = false;
+            lblXuatPhat.BackColor = Color.Transparent;
+            lblXuatPhat.Dock = DockStyle.Left;
+            lblXuatPhat.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblXuatPhat.ForeColor = Color.FromArgb(237, 45, 39);
+            lblXuatPhat.Location = new Point(157, 0);
+            lblXuatPhat.Name = "lblXuatPhat";
+            lblXuatPhat.Size = new Size(221, 47);
+            lblXuatPhat.TabIndex = 2;
+            lblXuatPhat.Text = "Ho Chi Minh (SGN)";
+            lblXuatPhat.TextAlignment = ContentAlignment.MiddleLeft;
             // 
             // guna2HtmlLabel1
             // 
@@ -330,7 +330,7 @@
             // 
             // guna2Panel8
             // 
-            guna2Panel8.Controls.Add(lblNguoiLon);
+            guna2Panel8.Controls.Add(lblNgayXuatPhat);
             guna2Panel8.CustomizableEdges = customizableEdges9;
             guna2Panel8.Dock = DockStyle.Left;
             guna2Panel8.Location = new Point(157, 0);
@@ -339,18 +339,19 @@
             guna2Panel8.Size = new Size(176, 47);
             guna2Panel8.TabIndex = 14;
             // 
-            // lblNguoiLon
+            // lblNgayXuatPhat
             // 
-            lblNguoiLon.AutoSize = false;
-            lblNguoiLon.BackColor = Color.Transparent;
-            lblNguoiLon.Dock = DockStyle.Fill;
-            lblNguoiLon.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNguoiLon.Location = new Point(0, 0);
-            lblNguoiLon.Name = "lblNguoiLon";
-            lblNguoiLon.Size = new Size(176, 47);
-            lblNguoiLon.TabIndex = 0;
-            lblNguoiLon.Text = "1 nguoi lon";
-            lblNguoiLon.TextAlignment = ContentAlignment.MiddleLeft;
+            lblNgayXuatPhat.AutoSize = false;
+            lblNgayXuatPhat.BackColor = Color.Transparent;
+            lblNgayXuatPhat.Dock = DockStyle.Fill;
+            lblNgayXuatPhat.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNgayXuatPhat.ForeColor = Color.FromArgb(237, 45, 39);
+            lblNgayXuatPhat.Location = new Point(0, 0);
+            lblNgayXuatPhat.Name = "lblNgayXuatPhat";
+            lblNgayXuatPhat.Size = new Size(176, 47);
+            lblNgayXuatPhat.TabIndex = 0;
+            lblNgayXuatPhat.Text = "1 nguoi lon";
+            lblNgayXuatPhat.TextAlignment = ContentAlignment.MiddleLeft;
             // 
             // guna2Panel7
             // 
@@ -373,7 +374,7 @@
             lblChuyenBay.Name = "lblChuyenBay";
             lblChuyenBay.Size = new Size(157, 47);
             lblChuyenBay.TabIndex = 0;
-            lblChuyenBay.Text = "Chuyen Bay";
+            lblChuyenBay.Text = "Ngay Bay";
             lblChuyenBay.TextAlignment = ContentAlignment.MiddleLeft;
             // 
             // guna2Panel3
@@ -453,9 +454,9 @@
             // guna2CustomGradientPanel1
             // 
             guna2CustomGradientPanel1.BorderRadius = 15;
-            guna2CustomGradientPanel1.Controls.Add(materialTextBoxEdit3);
-            guna2CustomGradientPanel1.Controls.Add(materialTextBoxEdit2);
-            guna2CustomGradientPanel1.Controls.Add(materialTextBoxEdit1);
+            guna2CustomGradientPanel1.Controls.Add(txtEmail);
+            guna2CustomGradientPanel1.Controls.Add(txtDienThoai);
+            guna2CustomGradientPanel1.Controls.Add(txtNgaySinh);
             guna2CustomGradientPanel1.Controls.Add(txtFullname);
             guna2CustomGradientPanel1.Controls.Add(guna2Panel20);
             guna2CustomGradientPanel1.CustomizableEdges = customizableEdges27;
@@ -470,98 +471,100 @@
             guna2CustomGradientPanel1.Size = new Size(817, 237);
             guna2CustomGradientPanel1.TabIndex = 24;
             // 
-            // materialTextBoxEdit3
+            // txtEmail
             // 
-            materialTextBoxEdit3.AnimateReadOnly = false;
-            materialTextBoxEdit3.AutoCompleteMode = AutoCompleteMode.None;
-            materialTextBoxEdit3.AutoCompleteSource = AutoCompleteSource.None;
-            materialTextBoxEdit3.BackgroundImageLayout = ImageLayout.None;
-            materialTextBoxEdit3.CharacterCasing = CharacterCasing.Normal;
-            materialTextBoxEdit3.Depth = 0;
-            materialTextBoxEdit3.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBoxEdit3.HideSelection = true;
-            materialTextBoxEdit3.Hint = "Email";
-            materialTextBoxEdit3.LeadingIcon = null;
-            materialTextBoxEdit3.Location = new Point(454, 145);
-            materialTextBoxEdit3.MaxLength = 32767;
-            materialTextBoxEdit3.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            materialTextBoxEdit3.Name = "materialTextBoxEdit3";
-            materialTextBoxEdit3.PasswordChar = '\0';
-            materialTextBoxEdit3.PrefixSuffixText = null;
-            materialTextBoxEdit3.ReadOnly = false;
-            materialTextBoxEdit3.RightToLeft = RightToLeft.No;
-            materialTextBoxEdit3.SelectedText = "";
-            materialTextBoxEdit3.SelectionLength = 0;
-            materialTextBoxEdit3.SelectionStart = 0;
-            materialTextBoxEdit3.ShortcutsEnabled = true;
-            materialTextBoxEdit3.Size = new Size(291, 48);
-            materialTextBoxEdit3.TabIndex = 2;
-            materialTextBoxEdit3.TabStop = false;
-            materialTextBoxEdit3.TextAlign = HorizontalAlignment.Left;
-            materialTextBoxEdit3.TrailingIcon = null;
-            materialTextBoxEdit3.UseSystemPasswordChar = false;
+            txtEmail.AnimateReadOnly = false;
+            txtEmail.AutoCompleteMode = AutoCompleteMode.None;
+            txtEmail.AutoCompleteSource = AutoCompleteSource.None;
+            txtEmail.BackgroundImageLayout = ImageLayout.None;
+            txtEmail.CharacterCasing = CharacterCasing.Normal;
+            txtEmail.Depth = 0;
+            txtEmail.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtEmail.HideSelection = true;
+            txtEmail.Hint = "Email";
+            txtEmail.LeadingIcon = null;
+            txtEmail.Location = new Point(454, 145);
+            txtEmail.MaxLength = 32767;
+            txtEmail.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtEmail.Name = "txtEmail";
+            txtEmail.PasswordChar = '\0';
+            txtEmail.PrefixSuffixText = null;
+            txtEmail.ReadOnly = false;
+            txtEmail.RightToLeft = RightToLeft.No;
+            txtEmail.SelectedText = "";
+            txtEmail.SelectionLength = 0;
+            txtEmail.SelectionStart = 0;
+            txtEmail.ShortcutsEnabled = true;
+            txtEmail.Size = new Size(291, 48);
+            txtEmail.TabIndex = 3;
+            txtEmail.TabStop = false;
+            txtEmail.TextAlign = HorizontalAlignment.Left;
+            txtEmail.TrailingIcon = null;
+            txtEmail.UseSystemPasswordChar = false;
             // 
-            // materialTextBoxEdit2
+            // txtDienThoai
             // 
-            materialTextBoxEdit2.AnimateReadOnly = false;
-            materialTextBoxEdit2.AutoCompleteMode = AutoCompleteMode.None;
-            materialTextBoxEdit2.AutoCompleteSource = AutoCompleteSource.None;
-            materialTextBoxEdit2.BackgroundImageLayout = ImageLayout.None;
-            materialTextBoxEdit2.CharacterCasing = CharacterCasing.Normal;
-            materialTextBoxEdit2.Depth = 0;
-            materialTextBoxEdit2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBoxEdit2.HideSelection = true;
-            materialTextBoxEdit2.Hint = "So Dien Thoai";
-            materialTextBoxEdit2.LeadingIcon = null;
-            materialTextBoxEdit2.Location = new Point(73, 145);
-            materialTextBoxEdit2.MaxLength = 32767;
-            materialTextBoxEdit2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            materialTextBoxEdit2.Name = "materialTextBoxEdit2";
-            materialTextBoxEdit2.PasswordChar = '\0';
-            materialTextBoxEdit2.PrefixSuffixText = null;
-            materialTextBoxEdit2.ReadOnly = false;
-            materialTextBoxEdit2.RightToLeft = RightToLeft.No;
-            materialTextBoxEdit2.SelectedText = "";
-            materialTextBoxEdit2.SelectionLength = 0;
-            materialTextBoxEdit2.SelectionStart = 0;
-            materialTextBoxEdit2.ShortcutsEnabled = true;
-            materialTextBoxEdit2.Size = new Size(291, 48);
-            materialTextBoxEdit2.TabIndex = 2;
-            materialTextBoxEdit2.TabStop = false;
-            materialTextBoxEdit2.TextAlign = HorizontalAlignment.Left;
-            materialTextBoxEdit2.TrailingIcon = null;
-            materialTextBoxEdit2.UseSystemPasswordChar = false;
+            txtDienThoai.AnimateReadOnly = false;
+            txtDienThoai.AutoCompleteMode = AutoCompleteMode.None;
+            txtDienThoai.AutoCompleteSource = AutoCompleteSource.None;
+            txtDienThoai.BackgroundImageLayout = ImageLayout.None;
+            txtDienThoai.CharacterCasing = CharacterCasing.Normal;
+            txtDienThoai.Depth = 0;
+            txtDienThoai.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtDienThoai.HideSelection = true;
+            txtDienThoai.Hint = "So Dien Thoai";
+            txtDienThoai.LeadingIcon = null;
+            txtDienThoai.Location = new Point(73, 145);
+            txtDienThoai.MaxLength = 32767;
+            txtDienThoai.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtDienThoai.Name = "txtDienThoai";
+            txtDienThoai.PasswordChar = '\0';
+            txtDienThoai.PrefixSuffixText = null;
+            txtDienThoai.ReadOnly = false;
+            txtDienThoai.RightToLeft = RightToLeft.No;
+            txtDienThoai.SelectedText = "";
+            txtDienThoai.SelectionLength = 0;
+            txtDienThoai.SelectionStart = 0;
+            txtDienThoai.ShortcutsEnabled = true;
+            txtDienThoai.Size = new Size(291, 48);
+            txtDienThoai.TabIndex = 2;
+            txtDienThoai.TabStop = false;
+            txtDienThoai.TextAlign = HorizontalAlignment.Left;
+            txtDienThoai.TrailingIcon = null;
+            txtDienThoai.UseSystemPasswordChar = false;
+            txtDienThoai.KeyPress += txtDienThoai_KeyPress;
             // 
-            // materialTextBoxEdit1
+            // txtNgaySinh
             // 
-            materialTextBoxEdit1.AnimateReadOnly = false;
-            materialTextBoxEdit1.AutoCompleteMode = AutoCompleteMode.None;
-            materialTextBoxEdit1.AutoCompleteSource = AutoCompleteSource.None;
-            materialTextBoxEdit1.BackgroundImageLayout = ImageLayout.None;
-            materialTextBoxEdit1.CharacterCasing = CharacterCasing.Normal;
-            materialTextBoxEdit1.Depth = 0;
-            materialTextBoxEdit1.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBoxEdit1.HideSelection = true;
-            materialTextBoxEdit1.Hint = "Ngay Sinh (DD/MM/YYYY)";
-            materialTextBoxEdit1.LeadingIcon = null;
-            materialTextBoxEdit1.Location = new Point(454, 61);
-            materialTextBoxEdit1.MaxLength = 32767;
-            materialTextBoxEdit1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            materialTextBoxEdit1.Name = "materialTextBoxEdit1";
-            materialTextBoxEdit1.PasswordChar = '\0';
-            materialTextBoxEdit1.PrefixSuffixText = null;
-            materialTextBoxEdit1.ReadOnly = false;
-            materialTextBoxEdit1.RightToLeft = RightToLeft.No;
-            materialTextBoxEdit1.SelectedText = "";
-            materialTextBoxEdit1.SelectionLength = 0;
-            materialTextBoxEdit1.SelectionStart = 0;
-            materialTextBoxEdit1.ShortcutsEnabled = true;
-            materialTextBoxEdit1.Size = new Size(291, 48);
-            materialTextBoxEdit1.TabIndex = 2;
-            materialTextBoxEdit1.TabStop = false;
-            materialTextBoxEdit1.TextAlign = HorizontalAlignment.Left;
-            materialTextBoxEdit1.TrailingIcon = null;
-            materialTextBoxEdit1.UseSystemPasswordChar = false;
+            txtNgaySinh.AnimateReadOnly = false;
+            txtNgaySinh.AutoCompleteMode = AutoCompleteMode.None;
+            txtNgaySinh.AutoCompleteSource = AutoCompleteSource.None;
+            txtNgaySinh.BackgroundImageLayout = ImageLayout.None;
+            txtNgaySinh.CharacterCasing = CharacterCasing.Normal;
+            txtNgaySinh.Depth = 0;
+            txtNgaySinh.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtNgaySinh.HideSelection = true;
+            txtNgaySinh.Hint = "Ngay Sinh (DD/MM/YYYY)";
+            txtNgaySinh.LeadingIcon = null;
+            txtNgaySinh.Location = new Point(454, 61);
+            txtNgaySinh.MaxLength = 32767;
+            txtNgaySinh.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtNgaySinh.Name = "txtNgaySinh";
+            txtNgaySinh.PasswordChar = '\0';
+            txtNgaySinh.PrefixSuffixText = null;
+            txtNgaySinh.ReadOnly = false;
+            txtNgaySinh.RightToLeft = RightToLeft.No;
+            txtNgaySinh.SelectedText = "";
+            txtNgaySinh.SelectionLength = 0;
+            txtNgaySinh.SelectionStart = 0;
+            txtNgaySinh.ShortcutsEnabled = true;
+            txtNgaySinh.Size = new Size(291, 48);
+            txtNgaySinh.TabIndex = 1;
+            txtNgaySinh.TabStop = false;
+            txtNgaySinh.TextAlign = HorizontalAlignment.Left;
+            txtNgaySinh.TrailingIcon = null;
+            txtNgaySinh.UseSystemPasswordChar = false;
+            txtNgaySinh.KeyPress += txtNgaySinh_KeyPress;
             // 
             // txtFullname
             // 
@@ -588,7 +591,7 @@
             txtFullname.SelectionStart = 0;
             txtFullname.ShortcutsEnabled = true;
             txtFullname.Size = new Size(291, 48);
-            txtFullname.TabIndex = 2;
+            txtFullname.TabIndex = 0;
             txtFullname.TabStop = false;
             txtFullname.TextAlign = HorizontalAlignment.Left;
             txtFullname.TrailingIcon = null;
@@ -806,13 +809,13 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2Panel pnHeader;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblDen;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblXuatPhat;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Panel pnHeaderDetails;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblNguoiLon;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblNgayXuatPhat;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblChuyenBay;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
@@ -833,9 +836,9 @@
         private Guna.UI2.WinForms.Guna2RadioButton rbtnKhac;
         private Guna.UI2.WinForms.Guna2RadioButton rbtnNu;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtFullname;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit materialTextBoxEdit1;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit materialTextBoxEdit3;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit materialTextBoxEdit2;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNgaySinh;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtEmail;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtDienThoai;
         private Guna.UI2.WinForms.Guna2Button btnQuayLai;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private UCSubBodyControl ucSubBodyControl1;

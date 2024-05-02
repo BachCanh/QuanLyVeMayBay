@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblConnect = new ReaLTaiizor.Controls.ParrotButton();
             lblCancel = new ReaLTaiizor.Controls.ParrotButton();
             txtUsername = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
@@ -39,7 +39,6 @@
             lblUsername = new Label();
             lblPassword = new Label();
             lblDatabase = new Label();
-            cbRemember = new ReaLTaiizor.Controls.MaterialCheckBox();
             guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
@@ -61,7 +60,7 @@
             lblConnect.HoverBackgroundColor = Color.FromArgb(255, 192, 255);
             lblConnect.HoverTextColor = Color.SlateGray;
             lblConnect.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            lblConnect.Location = new Point(123, 364);
+            lblConnect.Location = new Point(123, 310);
             lblConnect.Name = "lblConnect";
             lblConnect.Size = new Size(113, 42);
             lblConnect.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
@@ -86,7 +85,7 @@
             lblCancel.HoverBackgroundColor = Color.FromArgb(255, 192, 255);
             lblCancel.HoverTextColor = Color.SlateGray;
             lblCancel.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            lblCancel.Location = new Point(383, 364);
+            lblCancel.Location = new Point(383, 310);
             lblCancel.Name = "lblCancel";
             lblCancel.Size = new Size(113, 42);
             lblCancel.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
@@ -195,7 +194,7 @@
             cbbDatabase.DrawMode = DrawMode.OwnerDrawFixed;
             cbbDatabase.DropDownHeight = 100;
             cbbDatabase.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbbDatabase.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cbbDatabase.Font = new Font("Segoe UI", 10F);
             cbbDatabase.ForeColor = Color.FromArgb(76, 76, 97);
             cbbDatabase.FormattingEnabled = true;
             cbbDatabase.HoverSelectionColor = Color.FromArgb(255, 192, 255);
@@ -237,23 +236,6 @@
             lblDatabase.TabIndex = 1;
             lblDatabase.Text = "Database:";
             // 
-            // cbRemember
-            // 
-            cbRemember.AutoSize = true;
-            cbRemember.Depth = 0;
-            cbRemember.Location = new Point(246, 300);
-            cbRemember.Margin = new Padding(0);
-            cbRemember.MouseLocation = new Point(-1, -1);
-            cbRemember.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            cbRemember.Name = "cbRemember";
-            cbRemember.ReadOnly = false;
-            cbRemember.Ripple = true;
-            cbRemember.Size = new Size(145, 37);
-            cbRemember.TabIndex = 6;
-            cbRemember.Text = "Remember Me?";
-            cbRemember.UseAccentColor = false;
-            cbRemember.UseVisualStyleBackColor = true;
-            // 
             // guna2Elipse3
             // 
             guna2Elipse3.BorderRadius = 30;
@@ -262,12 +244,12 @@
             // guna2Panel1
             // 
             guna2Panel1.Controls.Add(nightControlBox1);
-            guna2Panel1.CustomizableEdges = customizableEdges1;
+            guna2Panel1.CustomizableEdges = customizableEdges3;
             guna2Panel1.Dock = DockStyle.Top;
             guna2Panel1.FillColor = Color.White;
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel1.Size = new Size(636, 31);
             guna2Panel1.TabIndex = 9;
             // 
@@ -299,9 +281,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
-            ClientSize = new Size(636, 450);
+            ClientSize = new Size(636, 376);
             Controls.Add(guna2Panel1);
-            Controls.Add(cbRemember);
             Controls.Add(cbbDatabase);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
@@ -331,7 +312,6 @@
         private Label lblUsername;
         private Label lblPassword;
         private Label lblDatabase;
-        private ReaLTaiizor.Controls.MaterialCheckBox cbRemember;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;

@@ -18,6 +18,7 @@ namespace QuanLyVeMayBay
         private Guna2Button selectedBtn;
         private DBConnection db;
         ChuyenBay cb = new ChuyenBay();
+        MayBay mb = new MayBay();
         public FFlight(DBConnection db)
         {
             InitializeComponent();
@@ -31,17 +32,12 @@ namespace QuanLyVeMayBay
         {
             if (selectedBtn == btnChuyenBay)
             {
-                dtBody.DataSource = this.db.GetAllChuyenBay();
+                dtBody.DataSource = this.db.GetAllChuyenBaydt();
             }
             else if(selectedBtn == btnMayBay)
             {
                 dtBody.DataSource = db.GetAllMayBaydt();
             }
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void guna2Button6_Click(object sender, EventArgs e)
@@ -74,7 +70,7 @@ namespace QuanLyVeMayBay
                         string den = selectedRow.Cells[2].Value.ToString().Trim();
                         string maMB = selectedRow.Cells[3].Value.ToString().Trim();
 
-                        MayBay mb = new MayBay(maMB, "0");
+                        MayBay maybay = new MayBay(maMB, "0");
 
                         DateTime ngaybay = (DateTime)selectedRow.Cells[4].Value;
 
@@ -83,9 +79,21 @@ namespace QuanLyVeMayBay
                         int phutbay = (int)selectedRow.Cells[7].Value;
                         cb = new ChuyenBay(maCB, xuatphat, den, ngaybay, hacanh, catcanh, phutbay, mb);
                     }
+                    else if(selectedBtn == btnMayBay)
+                    {
+                        dtBody.CurrentRow.Selected = true;
+                        string maMB = selectedRow.Cells[0].Value.ToString().Trim();
+                        string tenMB = selectedRow.Cells[1].Value.ToString().Trim();
+                        List<LoaiVe> loaiVes = new List<LoaiVe>();
+                        loaiVes.Add(new LoaiVe((int)selectedRow.Cells[2].Value));
+                        loaiVes.Add(new LoaiVe((int)selectedRow.Cells[3].Value));
+                        loaiVes.Add(new LoaiVe((int)selectedRow.Cells[4].Value));
+                        loaiVes.Add(new LoaiVe((int)selectedRow.Cells[5].Value));
+                        mb = new MayBay(maMB, tenMB, loaiVes);
+                    }
                     else
                     {
-
+                        MessageBox.Show("Please what you want to do!");
                     }
                 }
             }
@@ -98,9 +106,10 @@ namespace QuanLyVeMayBay
                 AddFlight fInput = new AddFlight(db, cb);
                 fInput.Show();
             }
-            else if (selectedBtn == btnMayBay)
+            else if (selectedBtn == btnMayBay && mb.LoaiVe.Count > 0)
             {
-
+                AddAirplane addAirplane = new AddAirplane(mb, db);
+                addAirplane.Show();
             }
             else
             {
@@ -114,9 +123,9 @@ namespace QuanLyVeMayBay
             {
                 db.XoaChuyenBay(cb.MaCB);
             }
-            else if (selectedBtn == btnMayBay)
+            else if (selectedBtn == btnMayBay && mb.LoaiVe.Count > 0)
             {
-
+                db.XoaMayBay(mb.MaMB);
             }
             else
             {
@@ -133,27 +142,16 @@ namespace QuanLyVeMayBay
                 return;
             }
 
-
             if (selectedBtn != null)
             {
                 selectedBtn.FillColor = Color.LightGreen;
                 selectedBtn.Enabled = true;
             }
 
-            clickedBtn.FillColor = Color.SpringGreen;
+            clickedBtn.FillColor = Color.FromArgb(65, 176, 110);
 
             selectedBtn = clickedBtn;
-        }
-
-        private void btnMayBay_Click(object sender, EventArgs e)
-        {
-
-            dtBody.DataSource = db.GetAllMayBaydt();
-        }
-
-        private void btnChuyenBay_Click(object sender, EventArgs e)
-        {
-            dtBody.DataSource = this.db.GetAllChuyenBay();
+            FFlight_Load(sender, e);
         }
 
         private void btnReload_Click(object sender, EventArgs e)

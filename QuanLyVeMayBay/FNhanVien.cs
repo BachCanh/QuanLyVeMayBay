@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -81,14 +82,21 @@ namespace QuanLyVeMayBay
 
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-            FAdd_On fAdd_On = new FAdd_On();
+            FAdd_On fAdd_On = new FAdd_On(db);
             OpenChildForm(fAdd_On);
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            FStatistical statistical = new FStatistical();  
-            OpenChildForm (statistical);
+            FStatistical statistical = new FStatistical();
+            OpenChildForm(statistical);
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            FLogin fLogin = new FLogin();
+            fLogin.Show();
+            this.Hide();
         }
     }
 }

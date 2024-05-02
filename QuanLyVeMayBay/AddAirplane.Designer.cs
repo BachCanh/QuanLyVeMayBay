@@ -149,7 +149,7 @@
             btnCRUD.Size = new Size(128, 45);
             btnCRUD.TabIndex = 10;
             btnCRUD.Text = "Them";
-            btnCRUD.Click += btnCRUD_Click;
+            btnCRUD.Click += btnThem_Click;
             // 
             // txtTenMB
             // 

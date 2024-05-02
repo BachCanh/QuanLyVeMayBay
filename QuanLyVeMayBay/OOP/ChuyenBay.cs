@@ -24,16 +24,22 @@ namespace QuanLyVeMayBay
             this.ngaybay = ngaybay;
         }
 
-        public ChuyenBay(string maCB, string xuatphat, string den, DateTime ngaybay, TimeSpan hacanh, TimeSpan catcanh, int phutbay, MayBay maybay) : this(xuatphat, den, ngaybay)
+        public ChuyenBay(string maCB, string xuatphat, string den, DateTime ngaybay, TimeSpan catcanh, TimeSpan hacanh, int phutbay, MayBay maybay)
         {
+            this.xuatphat = xuatphat;
+            this.den = den;
+            this.ngaybay = ngaybay;
             this.maCB = maCB;
             this.hacanh = hacanh;
             this.catcanh = catcanh;
             this.phutbay = phutbay;
             this.maybay = maybay;
         }
-        public ChuyenBay(string xuatphat, string den, DateTime ngaybay, TimeSpan hacanh, TimeSpan catcanh, int phutbay, MayBay maybay) : this(xuatphat, den, ngaybay)
+        public ChuyenBay(string xuatphat, string den, DateTime ngaybay, TimeSpan catcanh, TimeSpan hacanh, int phutbay, MayBay maybay)
         {
+            this.xuatphat = xuatphat;
+            this.den = den;
+            this.ngaybay = ngaybay;
             maCB = string.Empty;
             this.hacanh = hacanh;
             this.catcanh = catcanh;

@@ -9,33 +9,43 @@ namespace QuanLyVeMayBay
     public class VeMayBay
     {
         private string maVe = string.Empty;
-        private string tinhtrang = string.Empty;
         private DateTime ngaydat;
-        private string bienlai = string.Empty;
-        private double tongtien;
+        private byte[] bienlai = new byte[0];
+        private decimal tongtien;
         private ConNguoi khachhang;
         private ChuyenBay chuyenbay;
         private LoaiVe loaive;
         private HanhLy hanhly;
-    
+        private List<GoiMon> goiMons = new List<GoiMon>();
         public VeMayBay() { }
 
-        public VeMayBay(string maVe, string tinhtrang, DateTime ngaydat, string bienlai, double tongtien, ConNguoi khachhang, ChuyenBay chuyenbay, LoaiVe loaive)
+        public VeMayBay(ConNguoi khachhang, ChuyenBay chuyenbay, LoaiVe loaive, HanhLy hanhly)
         {
-            this.maVe = maVe;
-            this.tinhtrang = tinhtrang;
-            this.ngaydat = ngaydat;
-            this.bienlai = bienlai;
-            this.tongtien = tongtien;
+            this.ngaydat = DateTime.Now;
+            this.hanhly = hanhly;
             this.khachhang = khachhang;
             this.chuyenbay = chuyenbay;
             this.loaive = loaive;
+            this.tongtien = CalTongTien();
         }
 
-        public VeMayBay(string maVe, string tinhtrang, DateTime ngaydat, string bienlai, double tongtien, ConNguoi khachhang, ChuyenBay chuyenbay, LoaiVe loaive, HanhLy hanhly)
+        public decimal CalTongTien()
+        {
+            decimal tt = 0;
+            if(goiMons.Count > 0)
+                foreach (GoiMon mon in goiMons)
+                {
+                    tt += mon.TongTien();
+                }
+            if (hanhly.Gia != null)
+                tt += (decimal)hanhly.Gia;
+            tt += loaive.Gia;
+            return tt;
+        }
+
+        public VeMayBay(string maVe, DateTime ngaydat, byte[] bienlai, decimal tongtien, ConNguoi khachhang, ChuyenBay chuyenbay, LoaiVe loaive, HanhLy hanhly)
         {
             this.maVe = maVe;
-            this.tinhtrang = tinhtrang;
             this.ngaydat = ngaydat;
             this.bienlai = bienlai;
             this.tongtien = tongtien;
@@ -44,15 +54,22 @@ namespace QuanLyVeMayBay
             this.loaive = loaive;
             this.hanhly = hanhly;
         }
+        public VeMayBay(string maVe, DateTime ngaydat, byte[] bienlai, decimal tongtien, ConNguoi khachhang, ChuyenBay chuyenbay, LoaiVe loaive, HanhLy hanhly, List<GoiMon> goiMons)
+        {
+            this.maVe = maVe;
+            this.ngaydat = ngaydat;
+            this.bienlai = bienlai;
+            this.tongtien = tongtien;
+            this.khachhang = khachhang;
+            this.chuyenbay = chuyenbay;
+            this.loaive = loaive;
+            this.hanhly = hanhly;
+            this.goiMons = goiMons;
+        }
 
         public string MaVe
         {
             get { return maVe; }
-        }
-
-        public string TinhTrang
-        {
-            get { return tinhtrang; }
         }
 
         public DateTime NgayDat
@@ -60,12 +77,12 @@ namespace QuanLyVeMayBay
             get { return ngaydat; }
         }
 
-        public string BienLai
+        public byte[] BienLai
         {
             get { return bienlai; }
         }
 
-        public double Tongtien
+        public decimal Tongtien
         { get { return tongtien; } }
 
         public ConNguoi KhachHang
@@ -87,5 +104,19 @@ namespace QuanLyVeMayBay
         {
             get { return hanhly; }
         }
+
+        public List<GoiMon> GM
+        {  get { return goiMons; } }
+
+        public void ThemMon(GoiMon gm)
+        {
+            goiMons.Add(gm);
+        }
+        
+        public void AddMaVe(string maVe)
+        {
+            this.maVe = maVe;
+        }
+        
     }
 }

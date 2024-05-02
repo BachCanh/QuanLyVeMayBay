@@ -15,6 +15,7 @@ namespace QuanLyVeMayBay
     {
         private object previousSelectedItemCbbXuatPhat;
         private object previousSelectedItemCbbDen;
+        DBConnection db = new DBConnection($"Data Source=LAPTOP-Q3MNC1CJ;Initial Catalog=QuanLyVeMayBay;Integrated Security=True;Encrypt=False");
         public FMainPage()
         {
             InitializeComponent();
@@ -22,19 +23,12 @@ namespace QuanLyVeMayBay
 
             dtpXuatPhat.MaxDate = new DateTime(9998, 12, 31);
 
-            dtpDen.MinDate = dtpXuatPhat.Value.AddDays(1);
-
-            dtpDen.MaxDate = new DateTime(9998, 12, 31);
-        }
-
-        private void FTest_Load(object sender, EventArgs e)
-        {
 
         }
 
         private void btnTraCuu_Click(object sender, EventArgs e)
         {
-            FFindFlight fFindFlight = new FFindFlight();
+            FFindFlight fFindFlight = new FFindFlight(db);
             this.Hide();
             fFindFlight.Closed += (s, args) => this.Close();
             fFindFlight.Show();
@@ -42,12 +36,8 @@ namespace QuanLyVeMayBay
 
         private void btnTimChuyenBay_Click(object sender, EventArgs e)
         {
-            if (dtpDen.Enabled == false)
-            {
-                dtpDen.Value = dtpDen.MinDate;
-            }
             ChuyenBay chuyenBay = new ChuyenBay(cbbXuatPhat.Text, cbbDen.Text, dtpXuatPhat.Value);
-            FSelectFight fSelectFight = new FSelectFight(chuyenBay);
+            FSelectFight fSelectFight = new FSelectFight(db, chuyenBay);
             this.Hide();
             fSelectFight.Closed += (s, args) => this.Close();
             fSelectFight.Show();
@@ -81,38 +71,15 @@ namespace QuanLyVeMayBay
             previousSelectedItemCbbDen = currentSelectedItem;
         }
 
-        private void rbtnKhuHoi_CheckedChanged(object sender, EventArgs e)
-        {
-            dtpDen.Enabled = true;
-            dtpDen.Visible = true;
-        }
+        //private void dtpXuatPhat_ValueChanged(object sender, EventArgs e)
+        //{
+        //    dtpDen.MinDate = dtpXuatPhat.Value.AddDays(1);
 
-        private void rbtnMotChieu_CheckedChanged(object sender, EventArgs e)
-        {
-            dtpDen.Enabled = false;
-            dtpDen.Visible = false;
-        }
-
-        private void dtpXuatPhat_ValueChanged(object sender, EventArgs e)
-        {
-            dtpDen.MinDate = dtpXuatPhat.Value.AddDays(1);
-
-            if (dtpDen.Value < dtpDen.MinDate)
-            {
-                dtpDen.Value = dtpDen.MinDate;
-            }
-        }
-
-        private void dtpDen_ValueChanged(object sender, EventArgs e)
-        {
-            dtpXuatPhat.MaxDate = dtpDen.Value.AddDays(-1);
-
-            if (dtpXuatPhat.Value > dtpXuatPhat.MaxDate)
-            {
-                dtpXuatPhat.Value = dtpXuatPhat.MaxDate;
-            }
-        }
-
+        //    if (dtpDen.Value < dtpDen.MinDate)
+        //    {
+        //        dtpDen.Value = dtpDen.MinDate;
+        //    }
+        //}
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             FLogin flogin = new FLogin();

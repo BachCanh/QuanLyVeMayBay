@@ -23,6 +23,12 @@ namespace QuanLyVeMayBay
             this.tenMB = tenMB;
             this.loaiVes = loaiVes;
         }
+        public MayBay(string maMB,string tenMB, List<LoaiVe> loaiVes)
+        {
+            this.maMB = maMB;
+            this.tenMB = tenMB;
+            this.loaiVes = loaiVes;
+        }
 
         public string MaMB
         {  get { return maMB; } }

@@ -13,13 +13,30 @@ namespace QuanLyVeMayBay
     public partial class AddAirplane : Form
     {
         MayBay mb = new MayBay();
-        List<LoaiVe> loaiVes = new List<LoaiVe>();
         DBConnection db;
         public AddAirplane(MayBay mb, DBConnection db)
         {
             InitializeComponent();
-            this.mb = mb;
             this.db = db;
+
+            if (mb.LoaiVe.Count > 0)
+            {
+                this.mb = mb;
+                FillInfor();
+                btnCRUD.Text = "Sua";
+                btnCRUD.Click -= btnThem_Click;
+                btnCRUD.Click += btnSua_Click;
+                lblTitle.Text = "Sua May Bay";
+            }
+        }
+
+        private void FillInfor()
+        {
+            txtTenMB.Text = mb.TenMB;
+            txtEco.Text = mb.LoaiVe[0].SoLuong.ToString();
+            txtDeluxe.Text = mb.LoaiVe[1].SoLuong.ToString();
+            txtSkyBoss.Text = mb.LoaiVe[2].SoLuong.ToString();
+            txtBusiness.Text = mb.LoaiVe[3].SoLuong.ToString();
         }
 
         private void AddAirplane_Load(object sender, EventArgs e)
@@ -32,14 +49,26 @@ namespace QuanLyVeMayBay
             this.Close();
         }
 
-        private void btnCRUD_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
+            List<LoaiVe> loaiVes = new List<LoaiVe>();
             loaiVes.Add(new LoaiVe(int.Parse(txtEco.Text)));
             loaiVes.Add(new LoaiVe(int.Parse(txtDeluxe.Text)));
             loaiVes.Add(new LoaiVe(int.Parse(txtSkyBoss.Text)));
             loaiVes.Add(new LoaiVe(int.Parse(txtBusiness.Text)));
             mb = new MayBay(txtTenMB.Text, loaiVes);
             db.ThemMayBay(mb);
+        }
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            List<LoaiVe> loaiVes = new List<LoaiVe>();
+            loaiVes.Add(new LoaiVe(int.Parse(txtEco.Text)));
+            loaiVes.Add(new LoaiVe(int.Parse(txtDeluxe.Text)));
+            loaiVes.Add(new LoaiVe(int.Parse(txtSkyBoss.Text)));
+            loaiVes.Add(new LoaiVe(int.Parse(txtBusiness.Text)));
+
+            mb = new MayBay(mb.MaMB, txtTenMB.Text, loaiVes);
+            db.SuaMayBay(mb);
         }
     }
 }

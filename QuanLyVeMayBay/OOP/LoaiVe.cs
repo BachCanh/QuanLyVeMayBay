@@ -12,7 +12,7 @@ namespace QuanLyVeMayBay
     {
         private string maloai;
         private string tenloai;
-        private int gia;
+        private decimal gia;
         private int soluong;
         private string maMB;
 
@@ -22,7 +22,7 @@ namespace QuanLyVeMayBay
         {
             this.soluong = soluong;
         }
-        public LoaiVe(string maloai, string tenloai, int gia, int soluong, string maMB)
+        public LoaiVe(string maloai, string tenloai, decimal gia, int soluong, string maMB)
         {
             this.maloai = maloai;
             this.tenloai = tenloai;
@@ -41,7 +41,7 @@ namespace QuanLyVeMayBay
             get { return tenloai; }
         }
 
-        public int Gia
+        public decimal Gia
         {
             get { return gia; }
         }

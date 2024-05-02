@@ -15,7 +15,13 @@ namespace QuanLyVeMayBay
         private string sdt;
         private string email;
 
-        public ConNguoi() { }   
+        public ConNguoi()
+        {
+            hoten = string.Empty;
+            ngaysinh = DateTime.MinValue;
+            gioitinh = sdt = string.Empty;
+            email = string.Empty;
+        }   
 
         public ConNguoi(string hoten, DateTime ngaysinh, string gioitinh, string sdt, string email)
         {

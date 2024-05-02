@@ -155,7 +155,7 @@
             btnChuyenBay.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnChuyenBay.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnChuyenBay.FillColor = Color.Transparent;
-            btnChuyenBay.Font = new Font("Cooper Black", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnChuyenBay.Font = new Font("Cooper Black", 14F);
             btnChuyenBay.ForeColor = Color.FromArgb(224, 224, 224);
             btnChuyenBay.Image = Properties.Resources.airplane;
             btnChuyenBay.ImageAlign = HorizontalAlignment.Left;
@@ -180,7 +180,7 @@
             btnDichVu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnDichVu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnDichVu.FillColor = Color.Transparent;
-            btnDichVu.Font = new Font("Cooper Black", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDichVu.Font = new Font("Cooper Black", 14F);
             btnDichVu.ForeColor = Color.FromArgb(224, 224, 224);
             btnDichVu.Image = Properties.Resources.airplane;
             btnDichVu.ImageAlign = HorizontalAlignment.Left;
@@ -205,7 +205,7 @@
             btnThongKe.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnThongKe.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnThongKe.FillColor = Color.Transparent;
-            btnThongKe.Font = new Font("Cooper Black", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnThongKe.Font = new Font("Cooper Black", 14F);
             btnThongKe.ForeColor = Color.FromArgb(224, 224, 224);
             btnThongKe.Image = Properties.Resources.airplane;
             btnThongKe.ImageAlign = HorizontalAlignment.Left;
@@ -230,7 +230,7 @@
             btnDangXuat.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnDangXuat.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnDangXuat.FillColor = Color.Transparent;
-            btnDangXuat.Font = new Font("Cooper Black", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDangXuat.Font = new Font("Cooper Black", 14F);
             btnDangXuat.ForeColor = Color.FromArgb(224, 224, 224);
             btnDangXuat.Image = Properties.Resources.airplane;
             btnDangXuat.ImageAlign = HorizontalAlignment.Left;
@@ -242,6 +242,7 @@
             btnDangXuat.Size = new Size(211, 45);
             btnDangXuat.TabIndex = 11;
             btnDangXuat.Text = "Dang Xuat";
+            btnDangXuat.Click += btnDangXuat_Click;
             // 
             // pnBody
             // 

@@ -17,15 +17,24 @@ namespace QuanLyVeMayBay
         private object previousSelectedItemCbbXuatPhat;
         private object previousSelectedItemCbbDen;
         ChuyenBay chuyenbay = new ChuyenBay();
-        private List<UCFlight> userControls;
+        DBConnection db;
+        private List<UCFlight> userControls = new List<UCFlight>();
         VeMayBay ve = new VeMayBay();
         private UCFlight currentlySelectedUC;
-        public FSelectFight(ChuyenBay chuyenBay)
+        private LoaiVe lv = new LoaiVe();
+        public FSelectFight(DBConnection db, ChuyenBay chuyenBay)
         {
             InitializeComponent();
             this.chuyenbay = chuyenBay;
+            this.db = db;
+            GetChuyenBay();
             FillInfor();
-            userControls = new List<UCFlight>();
+            SetEventClick();
+            
+        }
+
+        private void SetEventClick()
+        {
             foreach (Control control in flpBodyContent.Controls)
             {
                 if (control is UCFlight)
@@ -45,21 +54,20 @@ namespace QuanLyVeMayBay
             cbbXuatPhat.Text = chuyenbay.XuatPhat;
             cbbDen.Text = chuyenbay.Den;
             dtpNgayBay.Value = chuyenbay.NgayBay;
-            // Declare and initialize parameters
-            string maVe = "MV123";
-            string maCB = "CB456";
-            int phutBay = 120;
-            DateTime ngaydat = DateTime.Now;
-            DateTime ngaybay = DateTime.Now.AddDays(3);
-            TimeSpan giocatcanh = new TimeSpan(10, 30, 0);
-            TimeSpan giohacanh = new TimeSpan(12, 15, 0);
-
+            lblTotalResults.Text = flpBodyContent.Controls.Count.ToString();
         }
 
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        private void GetChuyenBay()
         {
-
+            flpBodyContent.Controls.Clear();
+            foreach(ChuyenBay cb in db.GetAllChuyenBay(chuyenbay))
+            {
+                UCFlight uc = new UCFlight(cb, db);
+                flpBodyContent.Controls.Add(uc);
+                flpBodyContent.Height += 115;
+            }
         }
+
         private void cbbXuatPhat_SelectedIndexChanged(object sender, EventArgs e)
         {
             var currentSelectedItem = ((ComboBox)sender).SelectedItem;
@@ -92,9 +100,9 @@ namespace QuanLyVeMayBay
         private void btnTim_Click(object sender, EventArgs e)
         {
             chuyenbay = new ChuyenBay(cbbXuatPhat.Text, cbbDen.Text, dtpNgayBay.Value);
-            lblXuatPhat.Text = chuyenbay.XuatPhat;
-            lblDen.Text = chuyenbay.Den;
-            lblNgayXuatPhat.Text = chuyenbay.NgayBay.ToString("dd/MM/yyyy");
+            GetChuyenBay();
+            FillInfor();
+            SetEventClick();
         }
 
         private void button_Click(object sender, EventArgs e)
@@ -110,6 +118,7 @@ namespace QuanLyVeMayBay
             currentlySelectedUC = clickedUC;
 
             HandleUserControlClick(clickedUC, clickedButton);
+            ucSubBody.FillGia(chuyenbay, lv);
         }
 
         private void HandleUserControlClick(UCFlight clickedUC, Guna2Button clickedButton)
@@ -127,11 +136,17 @@ namespace QuanLyVeMayBay
                 clickedUC.pnBody.FillColor = Color.White;
                 buttonClickCount = 0;
                 clickedButton.Text = "Chọn vé này";
+                lv = new LoaiVe();
+                chuyenbay = new ChuyenBay();
+                lblTongTien.Text = lv.Gia.ToString("N0") + " VND";
             }
             else if (buttonClickCount == 1)
             {
-                clickedUC.pnBody.FillColor = clickedUC.ColorType();
+                clickedUC.pnBody.FillColor = Color.MistyRose;
                 clickedButton.Text = "Hủy chọn vé";
+                chuyenbay = currentlySelectedUC.CBay;
+                lv = currentlySelectedUC.lv;
+                lblTongTien.Text = lv.Gia.ToString("N0") + " VND";
             }
 
             clickedButton.Tag = buttonClickCount;
@@ -150,7 +165,7 @@ namespace QuanLyVeMayBay
 
         private void btnDiTiep_Click(object sender, EventArgs e)
         {
-            FInputInformation fInput = new FInputInformation();
+            FInputInformation fInput = new FInputInformation(db, chuyenbay, lv);
             this.Hide();
             fInput.Closed += (s, args) => this.Close();
             fInput.Show();

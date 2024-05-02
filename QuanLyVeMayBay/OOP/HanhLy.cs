@@ -8,25 +8,32 @@ namespace QuanLyVeMayBay
 {
     public class HanhLy
     {
-        private string maHL = string.Empty;
-        private int cannang = 0;
-        private int gia = 0;
+        private object maHL = null;
+        private object cannang = null;
+        private object gia = null;
 
-        public HanhLy() { }
+        public HanhLy() 
+        {
+        }
 
-        public HanhLy(string maHL, int cannang, int gia)
+        public HanhLy(object maHL, object cannang, object gia)
         {
             this.maHL = maHL;
             this.cannang = cannang;
             this.gia = gia;
         }
-        public string MaHL 
+        public HanhLy(object cannang, object gia)
+        {
+            this.cannang = cannang;
+            this.gia = gia;
+        }
+        public object MaHL 
         { get { return maHL; } }
 
-        public int Cannang
+        public object Cannang
         { get { return cannang; } }
 
-        public int Gia
+        public object Gia
         { get { return gia; } }
     }
 }
