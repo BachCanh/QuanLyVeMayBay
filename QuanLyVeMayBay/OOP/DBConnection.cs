@@ -120,6 +120,104 @@ namespace QuanLyVeMayBay
         //
         // Chuyen Bay
         //
+
+        public DataTable GetAllFlightPassengerCount()
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                KetNoi();
+                SqlCommand cmd = new SqlCommand($"SELECT * FROM FlightPassengerView", connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(table);
+            }
+            catch (SqlException ex)
+            {
+                foreach (SqlError error in ex.Errors)
+                {
+                    MessageBox.Show($"SQL Error: {error.Number} - {error.Message}", "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            finally
+            {
+                DongKetNoi();
+            }
+            return table;
+        }
+
+        public DataTable FlightPassengerSuatAn()
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                KetNoi();
+                SqlCommand cmd = new SqlCommand($"SELECT * FROM FlightPassengerSuatAnView", connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(table);
+            }
+            catch (SqlException ex)
+            {
+                foreach (SqlError error in ex.Errors)
+                {
+                    MessageBox.Show($"SQL Error: {error.Number} - {error.Message}", "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            finally
+            {
+                DongKetNoi();
+            }
+            return table;
+        }
+
+        public DataTable FlightPassengerHanhLy()
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                KetNoi();
+                SqlCommand cmd = new SqlCommand($"SELECT * FROM FlightPassengerHanhLyView", connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(table);
+            }
+            catch (SqlException ex)
+            {
+                foreach (SqlError error in ex.Errors)
+                {
+                    MessageBox.Show($"SQL Error: {error.Number} - {error.Message}", "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            finally
+            {
+                DongKetNoi();
+            }
+            return table;
+        }
+
+
+        public DataTable FlightPassengerTotal()
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                KetNoi();
+                SqlCommand cmd = new SqlCommand($"SELECT * FROM FlightPassengerTotalView", connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(table);
+            }
+            catch (SqlException ex)
+            {
+                foreach (SqlError error in ex.Errors)
+                {
+                    MessageBox.Show($"SQL Error: {error.Number} - {error.Message}", "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            finally
+            {
+                DongKetNoi();
+            }
+            return table;
+        }
+
         public DataTable GetAllChuyenBaydt()
         {
             DataTable table = new DataTable();
@@ -756,6 +854,31 @@ namespace QuanLyVeMayBay
                 DongKetNoi();
             }
             return lv;
+        }
+
+        public bool checkVe(LoaiVe lv)
+        {
+            object result;
+            try
+            {
+                KetNoi();
+                SqlCommand cmd = new SqlCommand("SELECT CheckSoLuongLoaiVe(@MaLoai)", connection); // Modified SQL query to use the scalar function
+                cmd.Parameters.AddWithValue("@MaLoai", lv.MaLoai);
+                result = cmd.ExecuteScalar();
+                return (bool)result;
+            }
+            catch(SqlException ex)
+            {
+                foreach (SqlError error in ex.Errors)
+                {
+                    MessageBox.Show($"SQL Error: {error.Number} - {error.Message}", "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            finally
+            {
+                DongKetNoi();
+            }
+            return false;
         }
 
 

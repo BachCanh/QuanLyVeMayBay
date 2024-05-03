@@ -44,6 +44,7 @@ namespace QuanLyVeMayBay
         {
             if (selectedBtn == btnChuyenBay)
             {
+                cb = new ChuyenBay();
                 AddFlight fInput = new AddFlight(db, cb);
                 fInput.Show();
             }

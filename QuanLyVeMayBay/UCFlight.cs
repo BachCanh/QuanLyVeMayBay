@@ -63,6 +63,11 @@ namespace QuanLyVeMayBay
 
         private void cbbLoaiVe_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lv = db.GetLoaiVe(cb.MB.MaMB, cbbLoaiVe.Text);
+            if(!db.checkVe(lv))
+            {
+                return;
+            }
             if (cbbLoaiVe.SelectedIndex == 0)
             {
                 ptbIconVe.Image = Properties.Resources.eco;
@@ -81,7 +86,7 @@ namespace QuanLyVeMayBay
                 ptbIconVe.Image = Properties.Resources.business;
             }
             ptbIconVe.BackColor = ColorType();
-            lv = db.GetLoaiVe(cb.MB.MaMB, cbbLoaiVe.Text);
+
             FillInfor();
         }
 

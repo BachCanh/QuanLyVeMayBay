@@ -28,7 +28,7 @@ namespace QuanLyVeMayBay
                 string mb = item.MaMB + " - " + item.TenMB;
                 cbbMayBay.Items.Add(mb);
             }
-
+            dtpNgayBay.Value = DateTime.Now;
             if (cbay.MaCB != null && !cbay.MaCB.Equals("") && cbay.NgayBay != null && cbay.NgayBay != DateTime.MinValue)
             {
                 this.cb = cbay;

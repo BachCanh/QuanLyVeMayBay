@@ -88,7 +88,7 @@ namespace QuanLyVeMayBay
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            FStatistical statistical = new FStatistical();
+            FStatistical statistical = new FStatistical(db);
             OpenChildForm(statistical);
         }
 

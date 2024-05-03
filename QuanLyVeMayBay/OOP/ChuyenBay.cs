@@ -15,7 +15,10 @@ namespace QuanLyVeMayBay
         private TimeSpan hacanh, catcanh;
         private int phutbay;
         private MayBay maybay;
-        public ChuyenBay() { }
+        public ChuyenBay() 
+        {
+            ngaybay = new DateTime(1900, 1, 1);
+        }
 
         public ChuyenBay(string xuatphat, string den, DateTime ngaybay)
         {
