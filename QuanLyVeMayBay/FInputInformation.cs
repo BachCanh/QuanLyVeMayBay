@@ -51,6 +51,7 @@ namespace QuanLyVeMayBay.Properties
                 if(cn.GioiTinh == "Khac") rbtnNam.Checked = true;
             }
             ucSubBodyControl1.FillGia(cb, lv);
+            lblTongTienVe.Text = lv.Gia.ToString("N0") + " VND";
         }
         private void getConNguoi()
         {

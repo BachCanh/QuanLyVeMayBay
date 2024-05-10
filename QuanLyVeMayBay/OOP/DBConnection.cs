@@ -33,9 +33,9 @@ namespace QuanLyVeMayBay
                     return ms.ToArray();
                 }
             }
-            catch (Exception ex)
+            catch 
             {
-                MessageBox.Show("Please Input the PNG file!!");
+                throw new Exception("Please Input the PNG file!!");
             }
             return new byte[0];
         }
@@ -590,7 +590,15 @@ namespace QuanLyVeMayBay
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@TenSa", suatAn.TenSA);
                 cmd.Parameters.AddWithValue("@Gia", suatAn.Gia);
-                cmd.Parameters.AddWithValue("@hinhMH", (object)ImageToByteArray(suatAn.HinhMH) ?? DBNull.Value);
+                try
+                {
+                    cmd.Parameters.AddWithValue("@hinhMH", (object)ImageToByteArray(suatAn.HinhMH) ?? DBNull.Value);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Them thanh cong!");
             }
@@ -645,7 +653,15 @@ namespace QuanLyVeMayBay
                 cmd.Parameters.AddWithValue("@MaSA", suatAn.MaSA);
                 cmd.Parameters.AddWithValue("@TenSa", suatAn.TenSA);
                 cmd.Parameters.AddWithValue("@Gia", suatAn.Gia);
-                cmd.Parameters.AddWithValue("@hinhMH", (object)ImageToByteArray(suatAn.HinhMH) ?? DBNull.Value);
+                try
+                {
+                    cmd.Parameters.AddWithValue("@hinhMH", (object)ImageToByteArray(suatAn.HinhMH) ?? DBNull.Value);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Sua thanh cong!");
             }
@@ -856,14 +872,16 @@ namespace QuanLyVeMayBay
             return lv;
         }
 
-        public bool checkVe(LoaiVe lv)
+        public bool checkVe(LoaiVe lv, ChuyenBay cb)
         {
             object result;
             try
             {
                 KetNoi();
-                SqlCommand cmd = new SqlCommand("SELECT CheckSoLuongLoaiVe(@MaLoai)", connection); // Modified SQL query to use the scalar function
+                SqlCommand cmd = new SqlCommand("SELECT dbo.CheckSoLuongLoaiVe(@MaLoai, @MaCB)", connection);
+
                 cmd.Parameters.AddWithValue("@MaLoai", lv.MaLoai);
+                cmd.Parameters.AddWithValue("@MaCB", cb.MaCB);
                 result = cmd.ExecuteScalar();
                 return (bool)result;
             }
@@ -882,39 +900,6 @@ namespace QuanLyVeMayBay
         }
 
 
-        public float TongTienVeDaBan()
-        {
-            float TongTienVe = 0;
-
-            try
-            {
-                KetNoi();
-                SqlCommand cmd = new SqlCommand("SELECT dbo.TongTienVeDaBan() AS TongTienVeDaBan", connection);
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    if (!reader.IsDBNull(reader.GetOrdinal("TongTienVe")))
-                    {
-                        TongTienVe = reader.GetFloat(reader.GetOrdinal("TongTienVe"));
-                        MessageBox.Show(TongTienVe.ToString());
-                    }
-                }
-                reader.Close();
-            }
-            catch (SqlException ex)
-            {
-                foreach (SqlError error in ex.Errors)
-                {
-                    MessageBox.Show($"SQL Error: {error.Number} - {error.Message}", "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            finally
-            {
-                DongKetNoi();
-            }
-
-            return TongTienVe;
-        }
         public void GenerateMa(out string MaVe)
         {
             MaVe = "";
@@ -944,6 +929,8 @@ namespace QuanLyVeMayBay
         }
         public void ThemVeChuyenBay(VeMayBay ve)
         {
+            string mave = string.Empty;
+            GenerateMa(out mave);
             try
             {
                 KetNoi();
@@ -962,15 +949,9 @@ namespace QuanLyVeMayBay
                 }
                 else cmd.Parameters.AddWithValue("@MaHL", DBNull.Value);
                 cmd.Parameters.AddWithValue("@TongTien", ve.Tongtien);
-
-                SqlParameter outputParameter = new SqlParameter("@MaVe", SqlDbType.VarChar, 4);
-                outputParameter.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(outputParameter);
-
+                cmd.Parameters.AddWithValue("@MaVe", mave);
+                ve.AddMaVe(mave);
                 cmd.ExecuteNonQuery();
-
-                string generatedMaVe = cmd.Parameters["@MaVe"].Value.ToString();
-                ve.AddMaVe(generatedMaVe);
             }
             catch (SqlException ex)
             {
@@ -1005,7 +986,6 @@ namespace QuanLyVeMayBay
             }
         }
 
-
         public byte[] GetBienLai(string maVe, string hoten)
         {
             byte[] bienlaiBytes = new byte[0];
@@ -1038,38 +1018,5 @@ namespace QuanLyVeMayBay
             return bienlaiBytes;
         }
 
-
-        //
-        // Goi Mon
-        //
-
-
-        public DataTable SearchFlights(DateTime ngayBay, decimal? giaTu, decimal? giaDen)
-        {
-            DataTable dt = new DataTable();
-            try
-            {
-                KetNoi();
-                SqlCommand cmd = new SqlCommand("TimVeBay", connection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@NgayBay", SqlDbType.Date).Value = ngayBay;
-                cmd.Parameters.Add("@GiaTu", SqlDbType.Decimal).Value = (object)giaTu ?? DBNull.Value;
-                cmd.Parameters.Add("@GiaDen", SqlDbType.Decimal).Value = (object)giaDen ?? DBNull.Value;
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(dt);
-            }
-            catch (SqlException ex)
-            {
-                foreach (SqlError error in ex.Errors)
-                {
-                    MessageBox.Show($"SQL Error: {error.Number} - {error.Message}", "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            finally
-            {
-                DongKetNoi();
-            }
-            return dt;
-        }
     }
 }

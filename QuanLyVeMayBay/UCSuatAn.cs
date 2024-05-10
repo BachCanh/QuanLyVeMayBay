@@ -25,7 +25,7 @@ namespace QuanLyVeMayBay
         private void FillInfor()
         {
             lblTen.Text = sa.TenSA;
-            lblGia.Text = sa.Gia.ToString();
+            lblGia.Text = sa.Gia.ToString("N0") + " VND";
             ptbHinhMH.Image = sa.HinhMH;
         }
 

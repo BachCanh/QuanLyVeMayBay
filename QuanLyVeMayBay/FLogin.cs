@@ -58,7 +58,10 @@ namespace QuanLyVeMayBay
                 string password = txtPassword.Text;
                 string username = txtUsername.Text;
                 string dbname = cbbDatabase.Text;
-                userConn = @$"Data Source=LAPTOP-Q3MNC1CJ;Initial Catalog={dbname};User ID={username};Password={password};Encrypt=False";
+                userConn = "Server=LAPTOP-Q3MNC1CJ;" +
+                          $"Database={dbname};" +
+                          $"User Id={username};" +
+                          $"Password={password};";
                 userCon = new SqlConnection(userConn);
 
                 if (userCon.State != ConnectionState.Open)

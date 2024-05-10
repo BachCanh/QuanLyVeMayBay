@@ -64,7 +64,7 @@ namespace QuanLyVeMayBay
         private void cbbLoaiVe_SelectedIndexChanged(object sender, EventArgs e)
         {
             lv = db.GetLoaiVe(cb.MB.MaMB, cbbLoaiVe.Text);
-            if(!db.checkVe(lv))
+            if(!db.checkVe(lv, cb))
             {
                 return;
             }

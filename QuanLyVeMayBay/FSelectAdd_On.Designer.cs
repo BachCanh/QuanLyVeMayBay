@@ -100,7 +100,7 @@
             guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             btnDiTiep = new Guna.UI2.WinForms.Guna2Button();
-            lblTongTienVe = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblTongTien = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             pnHeader = new Guna.UI2.WinForms.Guna2Panel();
@@ -122,13 +122,13 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             guna2Panel21 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel28 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel23 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblHanhLy = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel26 = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox11 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel20 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel23 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblGiaHL = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -136,13 +136,13 @@
             guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Panel22 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel29 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel24 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblSAnong = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel27 = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox12 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel22 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel24 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblGiaSA = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -192,7 +192,7 @@
             guna2Panel5.BackColor = Color.Transparent;
             guna2Panel5.Controls.Add(guna2Button2);
             guna2Panel5.Controls.Add(btnDiTiep);
-            guna2Panel5.Controls.Add(lblTongTienVe);
+            guna2Panel5.Controls.Add(lblTongTien);
             guna2Panel5.Controls.Add(guna2HtmlLabel7);
             guna2Panel5.CustomizableEdges = customizableEdges47;
             guna2Panel5.Dock = DockStyle.Bottom;
@@ -257,18 +257,18 @@
             btnDiTiep.Text = "Di Tiep";
             btnDiTiep.Click += btnDiTiep_Click;
             // 
-            // lblTongTienVe
+            // lblTongTien
             // 
-            lblTongTienVe.AutoSize = false;
-            lblTongTienVe.BackColor = Color.Transparent;
-            lblTongTienVe.Font = new Font("Segoe UI Semibold", 18.25F, FontStyle.Bold);
-            lblTongTienVe.ForeColor = Color.FromArgb(237, 45, 39);
-            lblTongTienVe.Location = new Point(521, 3);
-            lblTongTienVe.Name = "lblTongTienVe";
-            lblTongTienVe.Size = new Size(221, 67);
-            lblTongTienVe.TabIndex = 4;
-            lblTongTienVe.Text = "2,000,000 VND";
-            lblTongTienVe.TextAlignment = ContentAlignment.MiddleCenter;
+            lblTongTien.AutoSize = false;
+            lblTongTien.BackColor = Color.Transparent;
+            lblTongTien.Font = new Font("Segoe UI Semibold", 18.25F, FontStyle.Bold);
+            lblTongTien.ForeColor = Color.FromArgb(237, 45, 39);
+            lblTongTien.Location = new Point(521, 3);
+            lblTongTien.Name = "lblTongTien";
+            lblTongTien.Size = new Size(221, 67);
+            lblTongTien.TabIndex = 4;
+            lblTongTien.Text = "2,000,000 VND";
+            lblTongTien.TextAlignment = ContentAlignment.MiddleCenter;
             // 
             // guna2HtmlLabel7
             // 
@@ -550,7 +550,7 @@
             // 
             // guna2Panel28
             // 
-            guna2Panel28.Controls.Add(guna2HtmlLabel23);
+            guna2Panel28.Controls.Add(lblHanhLy);
             guna2Panel28.CustomizableEdges = customizableEdges1;
             guna2Panel28.Dock = DockStyle.Top;
             guna2Panel28.Location = new Point(118, 107);
@@ -560,18 +560,18 @@
             guna2Panel28.TabIndex = 15;
             guna2Panel28.Click += guna2PictureBox5_Click;
             // 
-            // guna2HtmlLabel23
+            // lblHanhLy
             // 
-            guna2HtmlLabel23.AutoSize = false;
-            guna2HtmlLabel23.BackColor = Color.Transparent;
-            guna2HtmlLabel23.Dock = DockStyle.Left;
-            guna2HtmlLabel23.Font = new Font("Segoe UI", 12F);
-            guna2HtmlLabel23.Location = new Point(0, 0);
-            guna2HtmlLabel23.Name = "guna2HtmlLabel23";
-            guna2HtmlLabel23.Size = new Size(147, 31);
-            guna2HtmlLabel23.TabIndex = 1;
-            guna2HtmlLabel23.Text = "0 Gói";
-            guna2HtmlLabel23.TextAlignment = ContentAlignment.MiddleLeft;
+            lblHanhLy.AutoSize = false;
+            lblHanhLy.BackColor = Color.Transparent;
+            lblHanhLy.Dock = DockStyle.Left;
+            lblHanhLy.Font = new Font("Segoe UI", 12F);
+            lblHanhLy.Location = new Point(0, 0);
+            lblHanhLy.Name = "lblHanhLy";
+            lblHanhLy.Size = new Size(147, 31);
+            lblHanhLy.TabIndex = 1;
+            lblHanhLy.Text = "0 Gói";
+            lblHanhLy.TextAlignment = ContentAlignment.MiddleLeft;
             // 
             // guna2Panel26
             // 
@@ -631,7 +631,7 @@
             // 
             // guna2Panel23
             // 
-            guna2Panel23.Controls.Add(guna2HtmlLabel15);
+            guna2Panel23.Controls.Add(lblGiaHL);
             guna2Panel23.CustomizableEdges = customizableEdges7;
             guna2Panel23.Location = new Point(493, 12);
             guna2Panel23.Name = "guna2Panel23";
@@ -639,20 +639,20 @@
             guna2Panel23.Size = new Size(219, 57);
             guna2Panel23.TabIndex = 13;
             // 
-            // guna2HtmlLabel15
+            // lblGiaHL
             // 
-            guna2HtmlLabel15.AutoSize = false;
-            guna2HtmlLabel15.BackColor = Color.Transparent;
-            guna2HtmlLabel15.Dock = DockStyle.Fill;
-            guna2HtmlLabel15.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
-            guna2HtmlLabel15.ForeColor = Color.FromArgb(237, 45, 39);
-            guna2HtmlLabel15.Location = new Point(0, 0);
-            guna2HtmlLabel15.Name = "guna2HtmlLabel15";
-            guna2HtmlLabel15.Size = new Size(219, 57);
-            guna2HtmlLabel15.TabIndex = 11;
-            guna2HtmlLabel15.Text = "180,000 VND";
-            guna2HtmlLabel15.TextAlignment = ContentAlignment.MiddleRight;
-            guna2HtmlLabel15.Click += guna2PictureBox5_Click;
+            lblGiaHL.AutoSize = false;
+            lblGiaHL.BackColor = Color.Transparent;
+            lblGiaHL.Dock = DockStyle.Fill;
+            lblGiaHL.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
+            lblGiaHL.ForeColor = Color.FromArgb(237, 45, 39);
+            lblGiaHL.Location = new Point(0, 0);
+            lblGiaHL.Name = "lblGiaHL";
+            lblGiaHL.Size = new Size(219, 57);
+            lblGiaHL.TabIndex = 11;
+            lblGiaHL.Text = "0 VND";
+            lblGiaHL.TextAlignment = ContentAlignment.MiddleRight;
+            lblGiaHL.Click += guna2PictureBox5_Click;
             // 
             // guna2Button3
             // 
@@ -764,7 +764,7 @@
             // 
             // guna2Panel29
             // 
-            guna2Panel29.Controls.Add(guna2HtmlLabel24);
+            guna2Panel29.Controls.Add(lblSAnong);
             guna2Panel29.CustomizableEdges = customizableEdges17;
             guna2Panel29.Dock = DockStyle.Top;
             guna2Panel29.Location = new Point(118, 107);
@@ -774,19 +774,19 @@
             guna2Panel29.TabIndex = 19;
             guna2Panel29.Click += guna2Panel22_Click;
             // 
-            // guna2HtmlLabel24
+            // lblSAnong
             // 
-            guna2HtmlLabel24.AutoSize = false;
-            guna2HtmlLabel24.BackColor = Color.Transparent;
-            guna2HtmlLabel24.Dock = DockStyle.Left;
-            guna2HtmlLabel24.Font = new Font("Segoe UI", 12F);
-            guna2HtmlLabel24.Location = new Point(0, 0);
-            guna2HtmlLabel24.Name = "guna2HtmlLabel24";
-            guna2HtmlLabel24.Size = new Size(147, 31);
-            guna2HtmlLabel24.TabIndex = 1;
-            guna2HtmlLabel24.Text = "Suất ăn nóng x0";
-            guna2HtmlLabel24.TextAlignment = ContentAlignment.MiddleLeft;
-            guna2HtmlLabel24.Click += guna2Panel22_Click;
+            lblSAnong.AutoSize = false;
+            lblSAnong.BackColor = Color.Transparent;
+            lblSAnong.Dock = DockStyle.Left;
+            lblSAnong.Font = new Font("Segoe UI", 12F);
+            lblSAnong.Location = new Point(0, 0);
+            lblSAnong.Name = "lblSAnong";
+            lblSAnong.Size = new Size(147, 31);
+            lblSAnong.TabIndex = 1;
+            lblSAnong.Text = "Suất ăn nóng x0";
+            lblSAnong.TextAlignment = ContentAlignment.MiddleLeft;
+            lblSAnong.Click += guna2Panel22_Click;
             // 
             // guna2Panel27
             // 
@@ -849,7 +849,7 @@
             // 
             // guna2Panel24
             // 
-            guna2Panel24.Controls.Add(guna2HtmlLabel9);
+            guna2Panel24.Controls.Add(lblGiaSA);
             guna2Panel24.CustomizableEdges = customizableEdges23;
             guna2Panel24.Location = new Point(499, 13);
             guna2Panel24.Name = "guna2Panel24";
@@ -857,20 +857,20 @@
             guna2Panel24.Size = new Size(219, 57);
             guna2Panel24.TabIndex = 17;
             // 
-            // guna2HtmlLabel9
+            // lblGiaSA
             // 
-            guna2HtmlLabel9.AutoSize = false;
-            guna2HtmlLabel9.BackColor = Color.Transparent;
-            guna2HtmlLabel9.Dock = DockStyle.Fill;
-            guna2HtmlLabel9.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
-            guna2HtmlLabel9.ForeColor = Color.FromArgb(237, 45, 39);
-            guna2HtmlLabel9.Location = new Point(0, 0);
-            guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            guna2HtmlLabel9.Size = new Size(219, 57);
-            guna2HtmlLabel9.TabIndex = 11;
-            guna2HtmlLabel9.Text = "0 VND";
-            guna2HtmlLabel9.TextAlignment = ContentAlignment.MiddleRight;
-            guna2HtmlLabel9.Click += guna2Panel22_Click;
+            lblGiaSA.AutoSize = false;
+            lblGiaSA.BackColor = Color.Transparent;
+            lblGiaSA.Dock = DockStyle.Fill;
+            lblGiaSA.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
+            lblGiaSA.ForeColor = Color.FromArgb(237, 45, 39);
+            lblGiaSA.Location = new Point(0, 0);
+            lblGiaSA.Name = "lblGiaSA";
+            lblGiaSA.Size = new Size(219, 57);
+            lblGiaSA.TabIndex = 11;
+            lblGiaSA.Text = "0 VND";
+            lblGiaSA.TextAlignment = ContentAlignment.MiddleRight;
+            lblGiaSA.Click += guna2Panel22_Click;
             // 
             // guna2Button4
             // 
@@ -1072,7 +1072,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button btnDiTiep;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblTongTienVe;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblTongTien;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2Panel pnHeader;
@@ -1105,14 +1105,14 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox9;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblGiaHL;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel16;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel23;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel24;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblGiaSA;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel26;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel19;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox11;
@@ -1123,8 +1123,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel22;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel28;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel29;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel23;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel24;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblHanhLy;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblSAnong;
         private UCSubBodyControl ucSubBodyControl1;
     }
 }

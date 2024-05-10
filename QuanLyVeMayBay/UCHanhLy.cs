@@ -22,7 +22,7 @@ namespace QuanLyVeMayBay
 
         private void FillInfor()
         {
-            lblGia.Text = hl.Gia.ToString();
+            lblGia.Text = ((decimal)hl.Gia).ToString("N0") + " VND";
             lblTen.Text = hl.Cannang.ToString() + "kg";
         }
 

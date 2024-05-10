@@ -21,6 +21,7 @@ namespace QuanLyVeMayBay
             InitializeComponent();
             this.db = db;
             this.ve = ve;
+            FillInfor();
         }
 
         private void FillInfor()
@@ -28,6 +29,8 @@ namespace QuanLyVeMayBay
             lblXuatPhat.Text = ve.ChuyenBay.XuatPhat;
             lblDen.Text = ve.ChuyenBay.Den;
             lblNgayBay.Text = ve.ChuyenBay.NgayBay.ToString("dd/MM/yyyy");
+            ucSubBodyControl1.FillGia(ve.ChuyenBay, ve.LoaiVe, ve.KhachHang, ve.HanhLy, ve.GM);
+            lblTong.Text = ve.CalTongTien().ToString("N0") + " VND";
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -44,9 +47,9 @@ namespace QuanLyVeMayBay
                 string pdfFilePath = @$"C:\Users\Canh\Downloads\{ve.MaVe.ToUpper()}.pdf";
                 pdfBytes = db.ReadPdfFileToByteArray(pdfFilePath);
                 db.ThemBienLai(ve.MaVe, pdfBytes);
-                if(ve.GM.Count > 0 )
+                if (ve.GM.Count > 0)
                 {
-                    foreach( var item in ve.GM )
+                    foreach (var item in ve.GM)
                     {
                         item.SetMaVe(ve.MaVe);
                         db.DatMonAn(item);
@@ -64,6 +67,11 @@ namespace QuanLyVeMayBay
             this.Hide();
             FThankYou fThankYou = new FThankYou();
             fThankYou.Show();
+        }
+
+        private void ucSubBodyControl1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

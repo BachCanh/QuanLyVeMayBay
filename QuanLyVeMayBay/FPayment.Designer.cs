@@ -116,7 +116,7 @@
             guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             btnQuayLai = new Guna.UI2.WinForms.Guna2Button();
             btnThanhToan = new Guna.UI2.WinForms.Guna2Button();
-            guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblTong = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             pnHeader = new Guna.UI2.WinForms.Guna2Panel();
@@ -243,7 +243,7 @@
             guna2Panel5.BackColor = Color.Transparent;
             guna2Panel5.Controls.Add(btnQuayLai);
             guna2Panel5.Controls.Add(btnThanhToan);
-            guna2Panel5.Controls.Add(guna2HtmlLabel6);
+            guna2Panel5.Controls.Add(lblTong);
             guna2Panel5.Controls.Add(guna2HtmlLabel7);
             guna2Panel5.CustomizableEdges = customizableEdges63;
             guna2Panel5.Dock = DockStyle.Bottom;
@@ -271,7 +271,7 @@
             btnQuayLai.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnQuayLai.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnQuayLai.FillColor = Color.White;
-            btnQuayLai.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnQuayLai.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             btnQuayLai.ForeColor = Color.Gray;
             btnQuayLai.Location = new Point(59, 12);
             btnQuayLai.Name = "btnQuayLai";
@@ -294,7 +294,7 @@
             btnThanhToan.DisabledState.CustomBorderColor = Color.DarkGray;
             btnThanhToan.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnThanhToan.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnThanhToan.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnThanhToan.Font = new Font("Segoe UI", 14.25F);
             btnThanhToan.ForeColor = Color.White;
             btnThanhToan.Location = new Point(1085, 12);
             btnThanhToan.Name = "btnThanhToan";
@@ -307,24 +307,24 @@
             btnThanhToan.Text = "Thanh Toan";
             btnThanhToan.Click += btnThanhToan_Click;
             // 
-            // guna2HtmlLabel6
+            // lblTong
             // 
-            guna2HtmlLabel6.AutoSize = false;
-            guna2HtmlLabel6.BackColor = Color.Transparent;
-            guna2HtmlLabel6.Font = new Font("Segoe UI Semibold", 18.25F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel6.ForeColor = Color.FromArgb(237, 45, 39);
-            guna2HtmlLabel6.Location = new Point(521, 3);
-            guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            guna2HtmlLabel6.Size = new Size(221, 67);
-            guna2HtmlLabel6.TabIndex = 4;
-            guna2HtmlLabel6.Text = "2,000,000 VND";
-            guna2HtmlLabel6.TextAlignment = ContentAlignment.MiddleCenter;
+            lblTong.AutoSize = false;
+            lblTong.BackColor = Color.Transparent;
+            lblTong.Font = new Font("Segoe UI Semibold", 18.25F, FontStyle.Bold);
+            lblTong.ForeColor = Color.FromArgb(237, 45, 39);
+            lblTong.Location = new Point(521, 3);
+            lblTong.Name = "lblTong";
+            lblTong.Size = new Size(221, 67);
+            lblTong.TabIndex = 4;
+            lblTong.Text = "2,000,000 VND";
+            lblTong.TextAlignment = ContentAlignment.MiddleCenter;
             // 
             // guna2HtmlLabel7
             // 
             guna2HtmlLabel7.AutoSize = false;
             guna2HtmlLabel7.BackColor = Color.Transparent;
-            guna2HtmlLabel7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2HtmlLabel7.Font = new Font("Segoe UI", 14.25F);
             guna2HtmlLabel7.Location = new Point(399, 0);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             guna2HtmlLabel7.Size = new Size(157, 67);
@@ -379,7 +379,7 @@
             lblDen.AutoSize = false;
             lblDen.BackColor = Color.Transparent;
             lblDen.Dock = DockStyle.Left;
-            lblDen.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDen.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblDen.ForeColor = Color.FromArgb(237, 45, 39);
             lblDen.Location = new Point(484, 0);
             lblDen.Name = "lblDen";
@@ -393,7 +393,7 @@
             guna2HtmlLabel4.AutoSize = false;
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Dock = DockStyle.Left;
-            guna2HtmlLabel4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2HtmlLabel4.Font = new Font("Segoe UI", 14.25F);
             guna2HtmlLabel4.Location = new Point(378, 0);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(106, 47);
@@ -406,7 +406,7 @@
             lblXuatPhat.AutoSize = false;
             lblXuatPhat.BackColor = Color.Transparent;
             lblXuatPhat.Dock = DockStyle.Left;
-            lblXuatPhat.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblXuatPhat.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblXuatPhat.ForeColor = Color.FromArgb(237, 45, 39);
             lblXuatPhat.Location = new Point(157, 0);
             lblXuatPhat.Name = "lblXuatPhat";
@@ -420,7 +420,7 @@
             guna2HtmlLabel1.AutoSize = false;
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Dock = DockStyle.Left;
-            guna2HtmlLabel1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2HtmlLabel1.Font = new Font("Segoe UI", 14.25F);
             guna2HtmlLabel1.Location = new Point(0, 0);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(157, 47);
@@ -456,7 +456,7 @@
             lblNgayBay.AutoSize = false;
             lblNgayBay.BackColor = Color.Transparent;
             lblNgayBay.Dock = DockStyle.Fill;
-            lblNgayBay.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNgayBay.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             lblNgayBay.ForeColor = Color.FromArgb(237, 45, 39);
             lblNgayBay.Location = new Point(0, 0);
             lblNgayBay.Name = "lblNgayBay";
@@ -481,7 +481,7 @@
             lblChuyenBay.AutoSize = false;
             lblChuyenBay.BackColor = Color.Transparent;
             lblChuyenBay.Dock = DockStyle.Fill;
-            lblChuyenBay.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblChuyenBay.Font = new Font("Segoe UI", 14.25F);
             lblChuyenBay.Location = new Point(0, 0);
             lblChuyenBay.Name = "lblChuyenBay";
             lblChuyenBay.Size = new Size(157, 47);
@@ -632,7 +632,7 @@
             guna2HtmlLabel23.AutoSize = false;
             guna2HtmlLabel23.BackColor = Color.Transparent;
             guna2HtmlLabel23.Dock = DockStyle.Bottom;
-            guna2HtmlLabel23.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel23.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             guna2HtmlLabel23.Location = new Point(0, 49);
             guna2HtmlLabel23.Name = "guna2HtmlLabel23";
             guna2HtmlLabel23.Size = new Size(149, 43);
@@ -675,7 +675,7 @@
             guna2HtmlLabel24.AutoSize = false;
             guna2HtmlLabel24.BackColor = Color.Transparent;
             guna2HtmlLabel24.Dock = DockStyle.Bottom;
-            guna2HtmlLabel24.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel24.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             guna2HtmlLabel24.Location = new Point(0, 49);
             guna2HtmlLabel24.Name = "guna2HtmlLabel24";
             guna2HtmlLabel24.Size = new Size(149, 43);
@@ -718,7 +718,7 @@
             guna2HtmlLabel29.AutoSize = false;
             guna2HtmlLabel29.BackColor = Color.Transparent;
             guna2HtmlLabel29.Dock = DockStyle.Bottom;
-            guna2HtmlLabel29.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel29.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             guna2HtmlLabel29.Location = new Point(0, 49);
             guna2HtmlLabel29.Name = "guna2HtmlLabel29";
             guna2HtmlLabel29.Size = new Size(149, 43);
@@ -761,7 +761,7 @@
             guna2HtmlLabel30.AutoSize = false;
             guna2HtmlLabel30.BackColor = Color.Transparent;
             guna2HtmlLabel30.Dock = DockStyle.Bottom;
-            guna2HtmlLabel30.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel30.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             guna2HtmlLabel30.Location = new Point(0, 49);
             guna2HtmlLabel30.Name = "guna2HtmlLabel30";
             guna2HtmlLabel30.Size = new Size(149, 43);
@@ -804,7 +804,7 @@
             guna2HtmlLabel31.AutoSize = false;
             guna2HtmlLabel31.BackColor = Color.Transparent;
             guna2HtmlLabel31.Dock = DockStyle.Bottom;
-            guna2HtmlLabel31.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel31.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             guna2HtmlLabel31.Location = new Point(0, 49);
             guna2HtmlLabel31.Name = "guna2HtmlLabel31";
             guna2HtmlLabel31.Size = new Size(149, 43);
@@ -829,7 +829,7 @@
             guna2HtmlLabel22.AutoSize = false;
             guna2HtmlLabel22.BackColor = Color.Transparent;
             guna2HtmlLabel22.Dock = DockStyle.Left;
-            guna2HtmlLabel22.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel22.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             guna2HtmlLabel22.ForeColor = Color.Black;
             guna2HtmlLabel22.Location = new Point(0, 0);
             guna2HtmlLabel22.Name = "guna2HtmlLabel22";
@@ -882,7 +882,7 @@
             guna2HtmlLabel13.AutoSize = false;
             guna2HtmlLabel13.BackColor = Color.Transparent;
             guna2HtmlLabel13.Dock = DockStyle.Bottom;
-            guna2HtmlLabel13.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel13.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             guna2HtmlLabel13.Location = new Point(0, 49);
             guna2HtmlLabel13.Name = "guna2HtmlLabel13";
             guna2HtmlLabel13.Size = new Size(149, 43);
@@ -998,7 +998,7 @@
             guna2HtmlLabel14.AutoSize = false;
             guna2HtmlLabel14.BackColor = Color.Transparent;
             guna2HtmlLabel14.Dock = DockStyle.Bottom;
-            guna2HtmlLabel14.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel14.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             guna2HtmlLabel14.Location = new Point(0, 49);
             guna2HtmlLabel14.Name = "guna2HtmlLabel14";
             guna2HtmlLabel14.Size = new Size(149, 43);
@@ -1041,7 +1041,7 @@
             guna2HtmlLabel19.AutoSize = false;
             guna2HtmlLabel19.BackColor = Color.Transparent;
             guna2HtmlLabel19.Dock = DockStyle.Bottom;
-            guna2HtmlLabel19.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel19.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             guna2HtmlLabel19.Location = new Point(0, 49);
             guna2HtmlLabel19.Name = "guna2HtmlLabel19";
             guna2HtmlLabel19.Size = new Size(149, 43);
@@ -1084,7 +1084,7 @@
             guna2HtmlLabel20.AutoSize = false;
             guna2HtmlLabel20.BackColor = Color.Transparent;
             guna2HtmlLabel20.Dock = DockStyle.Bottom;
-            guna2HtmlLabel20.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel20.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             guna2HtmlLabel20.Location = new Point(0, 49);
             guna2HtmlLabel20.Name = "guna2HtmlLabel20";
             guna2HtmlLabel20.Size = new Size(149, 43);
@@ -1127,7 +1127,7 @@
             guna2HtmlLabel21.AutoSize = false;
             guna2HtmlLabel21.BackColor = Color.Transparent;
             guna2HtmlLabel21.Dock = DockStyle.Bottom;
-            guna2HtmlLabel21.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel21.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             guna2HtmlLabel21.Location = new Point(0, 49);
             guna2HtmlLabel21.Name = "guna2HtmlLabel21";
             guna2HtmlLabel21.Size = new Size(149, 43);
@@ -1152,7 +1152,7 @@
             guna2HtmlLabel12.AutoSize = false;
             guna2HtmlLabel12.BackColor = Color.Transparent;
             guna2HtmlLabel12.Dock = DockStyle.Left;
-            guna2HtmlLabel12.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel12.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             guna2HtmlLabel12.ForeColor = Color.Black;
             guna2HtmlLabel12.Location = new Point(0, 0);
             guna2HtmlLabel12.Name = "guna2HtmlLabel12";
@@ -1201,7 +1201,7 @@
             guna2HtmlLabel11.AutoSize = false;
             guna2HtmlLabel11.BackColor = Color.Transparent;
             guna2HtmlLabel11.Dock = DockStyle.Left;
-            guna2HtmlLabel11.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2HtmlLabel11.Font = new Font("Segoe UI Semibold", 10F);
             guna2HtmlLabel11.ForeColor = SystemColors.ControlDarkDark;
             guna2HtmlLabel11.Location = new Point(0, 0);
             guna2HtmlLabel11.Name = "guna2HtmlLabel11";
@@ -1237,7 +1237,7 @@
             guna2HtmlLabel3.AutoSize = false;
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Dock = DockStyle.Left;
-            guna2HtmlLabel3.Font = new Font("Segoe UI Semibold", 18.25F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel3.Font = new Font("Segoe UI Semibold", 18.25F, FontStyle.Bold);
             guna2HtmlLabel3.Location = new Point(0, 0);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(325, 56);
@@ -1371,7 +1371,7 @@
 
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblTong;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2Panel pnHeader;

@@ -59,6 +59,7 @@ namespace QuanLyVeMayBay
         {
             FillGia(cb, lv);
             this.cn = cn;
+            tongcong = 0;
             if (hl.Cannang != null)
             {
                 tongcong += (decimal)hl.Gia;

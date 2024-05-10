@@ -34,30 +34,44 @@ namespace QuanLyVeMayBay
             fSelectHL = new FSelectHL(db);
             fSelectSA = new FSelectSA(db, this);
             FillInfor();
-            fSelectSA.FormClosing += FSelectSA_FormClosing;
-            fSelectHL.FormClosing += FSelectSA_FormClosing;
+            fSelectSA.btnXong.Click += FSelectSA_FormClosed;
+            fSelectHL.btnXong.Click += FSelectSA_FormClosed;
         }
         private void FillInfor()
         {
             lblXuatPhat.Text = cb.XuatPhat;
             lblDen.Text = cb.Den;
             lblNgayBay.Text = cb.NgayBay.ToString("dd/MM/yyyy");
+            decimal giaHL = 0;
             if (fSelectHL.HL.Gia != null)
             {
                 hl = fSelectHL.HL;
+                lblHanhLy.Text = "Goi ky gui " + hl.Cannang + "kg";
+                lblGiaHL.Text = ((decimal)hl.Gia).ToString("N0") + " VND";
+                giaHL = (decimal)hl.Gia;
             }
             else hl = new HanhLy();
-
+            int count = 0;
+            decimal gia = 0;
             if (fSelectSA.GoiMonS.Count > 0)
             {
                 goiMons = fSelectSA.GoiMonS;
+                foreach(GoiMon gm in  goiMons)
+                {
+                    count+=gm.SoLuong;
+                    gia += gm.TongTien();
+                }
             }
             ucSubBodyControl1.FillGia(cb, lv, cn, hl, goiMons);
+            lblSAnong.Text = "Suất ăn nóng x" + (count);
+            lblGiaSA.Text = gia.ToString("N0") + " VND";
+            decimal tong = gia + giaHL + lv.Gia;
+            lblTongTien.Text = tong.ToString("N0") + " VND";
         }
 
-        private void FSelectSA_FormClosing(object sender, FormClosingEventArgs e)
+        private void FSelectSA_FormClosed(object sender, EventArgs e)
         {
-            FillInfor();
+                this.FillInfor();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)

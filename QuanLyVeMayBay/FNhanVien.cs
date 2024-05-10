@@ -95,6 +95,7 @@ namespace QuanLyVeMayBay
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
             FLogin fLogin = new FLogin();
+            MessageBox.Show("Thank you and Goodbye!!");
             fLogin.Show();
             this.Hide();
         }

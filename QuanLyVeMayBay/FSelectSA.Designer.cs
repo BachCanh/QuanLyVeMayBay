@@ -228,7 +228,7 @@
         private FlowLayoutPanel flpBody;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button btnXong;
+        public Guna.UI2.WinForms.Guna2Button btnXong;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }
